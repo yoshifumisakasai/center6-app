@@ -38,10 +38,10 @@ const App: FC = () => {
                             <Box w="70vw">
                                 <Routes>
                                     <Route path={`/register/`} element={<Register />} />
-                                    <Route path={`/login/`} element={<Login />} />
+                                    <Route path={`/`} element={<Login />} />
                                     <Route path={`/skill_Check/`} element={<Skill_Check />} />
                                     <Route path={`/kanri_skill_Check/`} element={<Kanri_Skill_Check />} />
-                                    <Route path={`/`} element={<Mypage />} />
+                                    <Route path={`/mypage`} element={<Mypage />} />
                                     <Route path={`/frontEnd/`} element={<FrontEnd />} />
                                     <Route path={`/kanri_frontEnd/`} element={<Kanri_FrontEnd />} />
                                     <Route path="/dashboard/" element={<Dashboard />} />
