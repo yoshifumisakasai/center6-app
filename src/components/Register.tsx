@@ -91,15 +91,16 @@ const Register = () => {
                             leftIcon={<AddIcon />}
                             mt="8">会員登録
                         </Button>
+                        <Button
+                            onClick={goBack}
+                            colorScheme="gray"
+                            variant="outline"
+                            size="sm"
+                            leftIcon={<AddIcon />}
+                            mt="8">戻る
+                        </Button>
                     </form>
-                    <Button
-                        onClick={goBack}
-                        colorScheme="gray"
-                        variant="outline"
-                        size="sm"
-                        leftIcon={<AddIcon />}
-                        mt="8">戻る
-                    </Button>
+
                 </Container >
             )}
         </>
