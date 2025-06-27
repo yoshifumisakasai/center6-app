@@ -8,12 +8,12 @@ import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBSharkc7RZLAi0sHDABYfdfNuXzrLHEYc",
-    authDomain: "gatsby-firebase-b4213.firebaseapp.com",
-    projectId: "gatsby-firebase-b4213",
-    storageBucket: "gatsby-firebase-b4213.firebasestorage.app",
-    messagingSenderId: "133766045495",
-    appId: "1:133766045495:web:e54741ebf17511f01cc4b2"
+    apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Firebaseインスタンス化
