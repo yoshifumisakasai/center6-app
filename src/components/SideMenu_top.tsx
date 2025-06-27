@@ -27,8 +27,8 @@ export const SideMenu_top = () => {
         },
         {
             name: "管理メニュー",
-            path: "/firebase_db/",
-            icon: MdEmail
+            path: "/kanri_skill_Check/",
+            icon: MdAccountBox
 
         },
     
