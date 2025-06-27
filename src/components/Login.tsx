@@ -91,8 +91,9 @@ const Login = () => {
                             leftIcon={<AddIcon />}
                             mt="8">ログイン
                         </Button>
+                        <br />
                         <div>
-                            ユーザ登録は<Link href={'/register'}>こちら</Link>から
+                            ユーザ登録は<Link variant="underline" href={'/register'}>こちら</Link>から
                         </div>
                     </form>
                 </Container>
