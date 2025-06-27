@@ -64,43 +64,41 @@ const Register = () => {
                         mt="1"
                     />
                     <form onSubmit={handleSubmit}>
-                        <VStack>
-                            <label>メールアドレス</label>
-                            {/* ↓「value」と「onChange」を追加 */}
-                            <Input
-                                bgColor="white"
-                                placeholder="ID"
-                                name="email"
-                                type="email"
-                                value={registerEmail}
-                                onChange={(e) => setRegisterEmail(e.target.value)}
-                            />
-                            <label>パスワード</label>
-                            {/* ↓「value」と「onChange」を追加 */}
-                            <Input
-                                bgColor="white"
-                                placeholder="PASSWORD"
-                                name="password"
-                                type="password"
-                                value={registerPassword}
-                                onChange={(e) => setRegisterPassword(e.target.value)}
-                            />
+                        <label>メールアドレス</label>
+                        {/* ↓「value」と「onChange」を追加 */}
+                        <Input
+                            bgColor="white"
+                            placeholder="ID"
+                            name="email"
+                            type="email"
+                            value={registerEmail}
+                            onChange={(e) => setRegisterEmail(e.target.value)}
+                        />
+                        <label>パスワード</label>
+                        {/* ↓「value」と「onChange」を追加 */}
+                        <Input
+                            bgColor="white"
+                            placeholder="PASSWORD"
+                            name="password"
+                            type="password"
+                            value={registerPassword}
+                            onChange={(e) => setRegisterPassword(e.target.value)}
+                        />
 
-                            <Button
-                                onClick={handleSubmit}
-                                colorScheme="blue"
-                                leftIcon={<AddIcon />}
-                                mt="8">会員登録
-                            </Button>
-                            <Button
-                                onClick={goBack}
-                                colorScheme="gray"
-                                variant="outline"
-                                size="sm"
-                                leftIcon={<AddIcon />}
-                                mt="8">戻る
-                            </Button>
-                        </VStack>
+                        <Button
+                            onClick={handleSubmit}
+                            colorScheme="blue"
+                            leftIcon={<AddIcon />}
+                            mt="8">会員登録
+                        </Button>
+                        <Button
+                            onClick={goBack}
+                            colorScheme="gray"
+                            variant="outline"
+                            size="sm"
+                            leftIcon={<AddIcon />}
+                            mt="8">戻る
+                        </Button>
                     </form>
 
                 </Container >
