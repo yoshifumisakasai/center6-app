@@ -2,7 +2,7 @@ import { Button, Container } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "./FirebaseConfig";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { TodoTitle } from "./TodoTitle";
 import { Input } from "@chakra-ui/react"
 import { AddIcon } from "@chakra-ui/icons";
@@ -31,7 +31,10 @@ const Register = () => {
             alert("正しく入力してください");
         }
     };
-
+    let navigate = useNavigate();
+    let goBack = () => {
+        navigate(-1);
+    };
     const [user, setUser] = useState<any>("")
     console.log(user);
     useEffect(() => {
@@ -89,6 +92,14 @@ const Register = () => {
                             mt="8">会員登録
                         </Button>
                     </form>
+                    <Button
+                        onClick={goBack}
+                        colorScheme="gray"
+                        variant="outline"
+                        size="sm"
+                        leftIcon={<AddIcon />}
+                        mt="8">戻る
+                    </Button>
                 </Container >
             )}
         </>
