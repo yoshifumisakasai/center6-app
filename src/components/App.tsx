@@ -39,6 +39,7 @@ const App: FC = () => {
                                 <Routes>
                                     <Route path={`/register/`} element={<Register />} />
                                     <Route path={`/`} element={<Login />} />
+                                    <Route path={`/login/`} element={<Login />} />
                                     <Route path={`/skill_Check/`} element={<Skill_Check />} />
                                     <Route path={`/kanri_skill_Check/`} element={<Kanri_Skill_Check />} />
                                     <Route path={`/mypage`} element={<Mypage />} />
