@@ -23,6 +23,7 @@ import FrontEnd from "./FrontEnd";
 import CSS_library from "./CSS_library";
 import Hook from "./Hook";
 import State from "./State";
+import PdfViewer from "./PdfViewer";
 const App: FC = () => {
     return (
         <ChakraProvider theme={theme}>
@@ -46,6 +47,7 @@ const App: FC = () => {
                                     <Route path="/css_library/" element={<CSS_library />} />
                                     <Route path="/management/" element={<Management />} />
                                     <Route path={`/frontEndResult/`} element={<FrontEndResult />} />
+                                    <Route path={`/viewPdf/`} element={<PdfViewer />} />
 
                                 </Routes>
                             </Box>
