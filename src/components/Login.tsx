@@ -1,5 +1,5 @@
 import { AddIcon } from "@chakra-ui/icons";
-import { Button, Container, Input } from "@chakra-ui/react";
+import { Button, Container, Input, Link } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { TodoTitle } from "./TodoTitle";
 import { onAuthStateChanged, signInWithEmailAndPassword, User } from "firebase/auth";
@@ -91,6 +91,9 @@ const Login = () => {
                             leftIcon={<AddIcon />}
                             mt="8">ログイン
                         </Button>
+                        <div>
+                            ユーザ登録は<Link href={'/register'}>こちら</Link>から
+                        </div>
                     </form>
                 </Container>
             )}
