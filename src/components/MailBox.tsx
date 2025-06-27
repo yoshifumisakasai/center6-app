@@ -1,0 +1,1 @@
+export const MailBox = () => <h1>MailBox</h1>;

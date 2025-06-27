@@ -1,0 +1,54 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "content": "Create React appインストール",
+      "done": true
+    },
+    {
+      "id": "2",
+      "content": "JSON Server版のAPI",
+      "done": true
+    },
+    {
+      "id": "3",
+      "content": "Chakra UIインストール",
+      "done": false
+    },
+    {
+      "id": "01JNT9QYBJ2CBMP62R3VK414CS",
+      "content": "todo-app",
+      "done": false
+    },
+    {
+      "id": "01JNTH16JBR1F9S9M8VMHH343Q",
+      "content": "React",
+      "done": false
+    },
+    {
+      "id": "01JNTJ07BBP0H2S68YWHQ54GXH",
+      "content": "vuejs",
+      "done": true
+    },
+    {
+      "id": "01JPQ4DHZAHDP1PVB2SZFYBNZF",
+      "content": "Githubリポジトリ管理",
+      "done": false
+    },
+    {
+      "id": "01JPQ9S2NJ7WE3JK989KXBW307",
+      "content": "Redux状態管理",
+      "done": false
+    },
+    {
+      "id": "01JPSHPZJT9HVSCETESE39NNYR",
+      "content": "Next.jsフレームワーク",
+      "done": false
+    },
+    {
+      "id": "01JPXTEA52TGB9K48DGAHW7ABX",
+      "content": "ルーティング機能（React Router）",
+      "done": true
+    }
+  ]
+}

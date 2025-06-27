@@ -1,0 +1,1 @@
+export const Message = () => <h1>Message</h1>;
