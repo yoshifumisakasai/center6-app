@@ -54,7 +54,7 @@ const Login = () => {
         <>
             {/* ↓ログインしている場合、マイページにリダイレクトする設定 */}
             {user ? (
-                <Navigate to={`/`} />
+                <Navigate to={`/mypage/`} />
             ) : (
 
                 <Container centerContent p={{ base: "4", md: "6" }} maxWidth="3xl">
