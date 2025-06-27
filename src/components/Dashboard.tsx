@@ -20,11 +20,29 @@ import SideMenu_temp from "./SideMenu_temp";
 import { TodoTitle } from "./TodoTitle";
 import { AddIcon } from "@chakra-ui/icons";
 import SideMenu_top from "./SideMenu_top";
+import Firebase_db from "./Firebase_db_level3";
+import Firebase_db_level2 from "./Firebase_db_level2";
+import Firebase_db_level3 from "./Firebase_db_level3";
+import Firebase_db_level1 from "./Firebase_db_level1";
+import { DocumentData } from "firebase/firestore";
 const Dashboard: FC = () => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
     };
+    const [parentState, setParentState] = useState<DocumentData>([]);
+    const handleValueChange1 = (newValue: any) => {
+        set_level_1_Form(newValue);
+    };
+
+    const handleValueChange2 = (newValue: any) => {
+        set_level_2_Form(newValue);
+    };
+
+    const handleValueChange3 = (newValue: any) => {
+        set_level_3_Form(newValue);
+    };
+
     const [level_1, set_level_1_Form] = useState<any>([]);
     const [level_2, set_level_2_Form] = useState<any>([]);
     const [level_3, set_level_3_Form] = useState<any>([]);
@@ -32,54 +50,13 @@ const Dashboard: FC = () => {
     const next = () => {
         navigate("/frontEndResult/", { state: entity })
     }
-    const check_level_1 = (event: any) => {
 
-        if (level_1.includes(event.target.value)) {
-            set_level_1_Form(level_1.filter((checkedValue: any) => checkedValue !== event.target.value))
-        } else {
-            set_level_1_Form([...level_1, event.target.value])
-        }
-        // チェックされていたらエラーメッセージが表示されない
-
-
-    };
-
-    const check_level_2 = (event: any) => {
-
-        if (level_2.includes(event.target.value)) {
-            set_level_2_Form(level_2.filter((checkedValue: any) => checkedValue !== event.target.value))
-        } else {
-            set_level_2_Form([...level_2, event.target.value])
-        }
-        // チェックされていたらエラーメッセージが表示されない
-
-
-    };
-
-
-
-    const check_level_3 = (event: any) => {
-
-        if (level_3.includes(event.target.value)) {
-            set_level_3_Form(level_3.filter((checkedValue: any) => checkedValue !== event.target.value))
-        } else {
-            set_level_3_Form([...level_3, event.target.value])
-        }
-        // チェックされていたらエラーメッセージが表示されない
-
-
-    };
     interface HomeEntity {
         level1: {},
         level2: {},
         level3: {}
     }
 
-    // const entity: HomeEntity = {
-    //     level1: level_1.join(', '),
-    //     level2: level_2.join(', '),
-    //     level3: level_3.join(', ')
-    // };
     const entity: HomeEntity = {
         level1: level_1,
         level2: level_2,
@@ -107,96 +84,43 @@ const Dashboard: FC = () => {
                                 <Tab>Level3</Tab>
                             </TabList>
                             <TabPanels>
-                                <TabPanel>
 
-                                    <CheckboxGroup >
-                                        <Checkbox value="1" onChange={check_level_1}>(lan)HTMLタグ、属性を理解している</Checkbox>
-                                        <br />
-                                        <Checkbox value="2" onChange={check_level_1}>lan</Checkbox>
-                                        <br />
-                                        <Checkbox value="3" onChange={check_level_1}>lan</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                <TabPanel>
+                                    <Firebase_db_level1 handleValueChange1={handleValueChange1} />
                                 </TabPanel>
 
 
                                 <TabPanel>
-
-                                    <CheckboxGroup >
-                                        <Checkbox value="16" onChange={check_level_2}>ReduxやMaterial-UI</Checkbox>
-                                        <br />
-                                        <Checkbox value="17" onChange={check_level_2}>コンポーネント指向の設計</Checkbox>
-                                        <br />
-                                        <Checkbox value="18" onChange={check_level_2}>バックエンドのコード</Checkbox>
-                                        <br />
-                                        <Checkbox value="19" onChange={check_level_2}>フロントエンドの開発スキル</Checkbox>
-                                        <br />
-                                        <Checkbox value="20" onChange={check_level_2}>基本的なReactの概念を理解している</Checkbox>
-                                        <br />
-                                        <Checkbox value="21" onChange={check_level_2}>lan</Checkbox>
-                                        <br />
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                    <Firebase_db_level2 handleValueChange2={handleValueChange2} />
                                 </TabPanel>
+
+
                                 <TabPanel>
-
-                                    <CheckboxGroup >
-                                        <Checkbox value="1" onChange={check_level_3}>Java(A)</Checkbox>
-                                        <br />
-                                        <Checkbox value="2" onChange={check_level_3}>Java</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                    <Firebase_db_level3 handleValueChange3={handleValueChange3} />
                                 </TabPanel>
+
                             </TabPanels>
+                            <Button
+                                onClick={next}
+                                colorScheme="pink"
+                                variant="outline"
+                                size="sm"
+                                leftIcon={<AddIcon />}
+                                mt="8">判定
+                            </Button>
+                            <Button
+                                onClick={goBack}
+                                colorScheme="blue"
+                                variant="outline"
+                                size="sm"
+                                leftIcon={<AddIcon />}
+                                mt="8">戻る
+                            </Button>
                         </Tabs>
                     </Flex>
                 </Flex>
             </ChakraProvider>
+
         </>
     );
 };
