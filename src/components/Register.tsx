@@ -64,28 +64,28 @@ const Register = () => {
                         mt="1"
                     />
                     <form onSubmit={handleSubmit}>
-
-                        <label>メールアドレス</label>
-                        {/* ↓「value」と「onChange」を追加 */}
-                        <Input
-                            bgColor="white"
-                            placeholder="ID"
-                            name="email"
-                            type="email"
-                            value={registerEmail}
-                            onChange={(e) => setRegisterEmail(e.target.value)}
-                        />
-                        <label>パスワード</label>
-                        {/* ↓「value」と「onChange」を追加 */}
-                        <Input
-                            bgColor="white"
-                            placeholder="PASSWORD"
-                            name="password"
-                            type="password"
-                            value={registerPassword}
-                            onChange={(e) => setRegisterPassword(e.target.value)}
-                        />
                         <VStack>
+                            <label>メールアドレス</label>
+                            {/* ↓「value」と「onChange」を追加 */}
+                            <Input
+                                bgColor="white"
+                                placeholder="ID"
+                                name="email"
+                                type="email"
+                                value={registerEmail}
+                                onChange={(e) => setRegisterEmail(e.target.value)}
+                            />
+                            <label>パスワード</label>
+                            {/* ↓「value」と「onChange」を追加 */}
+                            <Input
+                                bgColor="white"
+                                placeholder="PASSWORD"
+                                name="password"
+                                type="password"
+                                value={registerPassword}
+                                onChange={(e) => setRegisterPassword(e.target.value)}
+                            />
+
                             <Button
                                 onClick={handleSubmit}
                                 colorScheme="blue"
