@@ -26,6 +26,7 @@ import State from "./State";
 import PdfViewer from "./PdfViewer";
 import Kanri_Dashboard from "./Kanri_Dashboard";
 import Kanri_FrontEnd from "./Kanri_FrontEnd";
+import Kanri_Skill_Check from "./Kanri_Skill_Check";
 const App: FC = () => {
     return (
         <ChakraProvider theme={theme}>
@@ -39,6 +40,7 @@ const App: FC = () => {
                                     <Route path={`/register/`} element={<Register />} />
                                     <Route path={`/login/`} element={<Login />} />
                                     <Route path={`/skill_Check/`} element={<Skill_Check />} />
+                                    <Route path={`/kanri_skill_Check/`} element={<Kanri_Skill_Check />} />
                                     <Route path={`/`} element={<Mypage />} />
                                     <Route path={`/frontEnd/`} element={<FrontEnd />} />
                                     <Route path={`/kanri_frontEnd/`} element={<Kanri_FrontEnd />} />
