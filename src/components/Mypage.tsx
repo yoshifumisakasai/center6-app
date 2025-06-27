@@ -34,7 +34,8 @@ const Mypage = () => {
     const navigate = useNavigate();
     const logout = async () => {
         await signOut(auth);
-        navigate("/login/");
+        // navigate("/login/");
+         navigate("/login");
     }
     const skill_check = async () => {
         navigate("/skill_check/");
