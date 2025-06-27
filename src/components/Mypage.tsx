@@ -35,7 +35,7 @@ const Mypage = () => {
     const logout = async () => {
         await signOut(auth);
         // navigate("/login/");
-         navigate("/");
+        navigate("/");
     }
     const skill_check = async () => {
         navigate("/skill_check/");
@@ -47,26 +47,28 @@ const Mypage = () => {
 
     return (
         <>
-        <Flex >
-            <SideMenu_top />
-            <Container centerContent p={{ base: "4", md: "6" }} maxWidth="3xl">
-                <TodoTitle
-                    title="マイページ"
-                    as="h1"
-                    fontSize={{ base: "xl", md: "xl" }}
-                    mt="1"
-                />
-                
-               
-              
-                <p>{user?.email}</p>
-                <Button
-                onClick={logout}
-                colorScheme="blue"
-                leftIcon={<AddIcon />}
-                mt="8">ログアウト
-            </Button>
-            </Container>
+            <Flex >
+                <SideMenu_top />
+                <Container centerContent p={{ base: "4", md: "6" }} maxWidth="3xl">
+                    <TodoTitle
+                        title="マイページ"
+                        as="h1"
+                        fontSize={{ base: "xl", md: "xl" }}
+                        mt="1"
+                    />
+
+
+
+                    <p>こんにちは</p>
+                    <br />
+                    <p>{user?.email}<p>さん</p></p>
+                    <Button
+                        onClick={logout}
+                        colorScheme="blue"
+                        leftIcon={<AddIcon />}
+                        mt="8">ログアウト
+                    </Button>
+                </Container>
             </Flex>
         </>
     );
