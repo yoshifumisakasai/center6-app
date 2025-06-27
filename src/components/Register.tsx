@@ -1,4 +1,4 @@
-import { Button, Container } from "@chakra-ui/react";
+import { Button, Container, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "./FirebaseConfig";
@@ -85,20 +85,22 @@ const Register = () => {
                             value={registerPassword}
                             onChange={(e) => setRegisterPassword(e.target.value)}
                         />
-                        <Button
-                            onClick={handleSubmit}
-                            colorScheme="blue"
-                            leftIcon={<AddIcon />}
-                            mt="8">会員登録
-                        </Button>
-                        <Button
-                            onClick={goBack}
-                            colorScheme="gray"
-                            variant="outline"
-                            size="sm"
-                            leftIcon={<AddIcon />}
-                            mt="8">戻る
-                        </Button>
+                        <VStack>
+                            <Button
+                                onClick={handleSubmit}
+                                colorScheme="blue"
+                                leftIcon={<AddIcon />}
+                                mt="8">会員登録
+                            </Button>
+                            <Button
+                                onClick={goBack}
+                                colorScheme="gray"
+                                variant="outline"
+                                size="sm"
+                                leftIcon={<AddIcon />}
+                                mt="8">戻る
+                            </Button>
+                        </VStack>
                     </form>
 
                 </Container >
