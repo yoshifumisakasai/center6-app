@@ -139,16 +139,17 @@ export default function PDF() {
   // const [front_language1, setLanguage1] = useState<DocumentData>([]);
 
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  let array:any = [];
+  let array: any = [];
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
       //console.log('Document data1:', documentSnapshot.get('content'));
-       array = documentSnapshot.data()['content'];
-      //console.log('配列サイズ→', array.length);
+      array = documentSnapshot.data()['content'];
+      console.log('配列サイズ→', array.length);
+      console.log('配列サイズ→', array);
       // for (let i: number = 0; i < array.length; i++) {
-        //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        // setLanguage1(documentSnapshot.get('content'));
+      //console.log('Document data2:', documentSnapshot.get('content')[i]);
+      // setLanguage1(documentSnapshot.get('content'));
       // }
     }
   });
