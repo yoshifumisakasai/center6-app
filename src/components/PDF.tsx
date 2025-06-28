@@ -1,11 +1,6 @@
 import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
-import { doc, DocumentData, getDoc } from "firebase/firestore";
-import { useState } from "react";
-import { db } from "./FirebaseConfig";
-
-
 
 //React-pdfが提供するコンポーネントやAPIを利用してPDFのスタイルを定義
 Font.register({
@@ -84,8 +79,6 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
 const data = [
   {
     title: "発注日",
@@ -138,22 +131,6 @@ const data = [
 ];
 
 export default function PDF() {
-  //PDF出力データ取得
-  const [front_language1, setLanguage1] = useState<DocumentData>([]);
-
-  const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  getDoc(usersCollectionRef1).then((documentSnapshot) => {
-    if (documentSnapshot.exists()) {
-      // setLanguage2(documentSnapshot.data());
-      //console.log('Document data1:', documentSnapshot.get('content'));
-      const array = documentSnapshot.data()['content'];
-      //console.log('配列サイズ→', array.length);
-      for (let i: number = 0; i < array.length; i++) {
-        //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        setLanguage1(documentSnapshot.get('content'));
-      }
-    }
-  });
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -161,14 +138,14 @@ export default function PDF() {
           <Text style={styles.header}>領収書</Text>
         </View>
         <View style={styles.details}>
-          {data.map((x, index) => (
+          {data.map((detail, index) => (
             <View style={styles.detailItem} key={index}>
               <View style={styles.textVertical}>
                 <Text>株式会社〇〇</Text>
                 <Text>〇〇 御中</Text>
               </View>
               <View>
-                <Text>発行日{x.value}</Text>
+                <Text>発行日{detail.value}</Text>
                 <View style={styles.company}>
                   <Text>株式会社〇〇</Text>
                   <Text>東京都〇〇〇〇〇〇〇〇〇〇</Text>
@@ -192,14 +169,13 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-
-            {front_language1.map((content: any, index: any) => (
+            {data[0].items.map((item, index) => (
               <View style={styles.tableRow} key={index}>
-                <Text style={styles.tableCol}>{content}</Text>
-                <Text style={styles.tableCol}>〇</Text>
-                <Text style={styles.tableCol}>✖</Text>
-                <Text style={styles.tableCol}>✖</Text>
-                <Text style={styles.tableCol}>〇</Text>
+                <Text style={styles.tableCol}>{item.name}</Text>
+                <Text style={styles.tableCol}>{item.surface}</Text>
+                <Text style={styles.tableCol}>{item.thickness}</Text>
+                <Text style={styles.tableCol}>{item.width}</Text>
+                <Text style={styles.tableCol}>{item.length}</Text>
               </View>
             ))}
           </View>
