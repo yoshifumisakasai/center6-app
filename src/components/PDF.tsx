@@ -1,6 +1,9 @@
 import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
+import { doc, DocumentData, getDoc } from "firebase/firestore";
+import { useState } from "react";
+import { db } from "./FirebaseConfig";
 
 //React-pdfが提供するコンポーネントやAPIを利用してPDFのスタイルを定義
 Font.register({
@@ -131,6 +134,23 @@ const data = [
 ];
 
 export default function PDF() {
+
+  //PDF出力データ取得Add commentMore actions
+  const [front_language1, setLanguage1] = useState<DocumentData>([]);
+
+  const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+  getDoc(usersCollectionRef1).then((documentSnapshot) => {
+    if (documentSnapshot.exists()) {
+      // setLanguage2(documentSnapshot.data());
+      //console.log('Document data1:', documentSnapshot.get('content'));
+      const array = documentSnapshot.data()['content'];
+      //console.log('配列サイズ→', array.length);
+      for (let i: number = 0; i < array.length; i++) {
+        //console.log('Document data2:', documentSnapshot.get('content')[i]);
+        setLanguage1(documentSnapshot.get('content'));
+      }
+    }
+  });
   return (
     <Document>
       <Page size="A4" style={styles.page}>
