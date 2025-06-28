@@ -191,8 +191,8 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-            {array.map((content: any, index: any) => (
-              <View style={styles.tableRow} key={index}>
+            {array.map((content: any) => (
+              <View style={styles.tableRow}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>〇</Text>
