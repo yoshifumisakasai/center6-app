@@ -198,7 +198,6 @@ export default function PDF() {
                 <Text style={styles.tableCol}>〇</Text>
                 <Text style={styles.tableCol}>✖</Text>
                 <Text style={styles.tableCol}>✖</Text>
-                <Text style={styles.tableCol}>〇</Text>
               </View>
             ))}
           </View>
