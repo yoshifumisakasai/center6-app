@@ -5,6 +5,23 @@ import { doc, DocumentData, getDoc } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "./FirebaseConfig";
 
+
+//PDF出力データ取得
+const [front_language1, setLanguage1] = useState<DocumentData>([]);
+
+const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+getDoc(usersCollectionRef1).then((documentSnapshot) => {
+  if (documentSnapshot.exists()) {
+    // setLanguage2(documentSnapshot.data());
+    //console.log('Document data1:', documentSnapshot.get('content'));
+    const array = documentSnapshot.data()['content'];
+    //console.log('配列サイズ→', array.length);
+    for (let i: number = 0; i < array.length; i++) {
+      //console.log('Document data2:', documentSnapshot.get('content')[i]);
+      setLanguage1(documentSnapshot.get('content'));
+    }
+  }
+});
 //React-pdfが提供するコンポーネントやAPIを利用してPDFのスタイルを定義
 Font.register({
   family: 'font_001',
@@ -82,22 +99,7 @@ const styles = StyleSheet.create({
   },
 });
 
-//PDF出力データ取得
-const [front_language1, setLanguage1] = useState<DocumentData>([]);
 
-const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-getDoc(usersCollectionRef1).then((documentSnapshot) => {
-  if (documentSnapshot.exists()) {
-    // setLanguage2(documentSnapshot.data());
-    //console.log('Document data1:', documentSnapshot.get('content'));
-    const array = documentSnapshot.data()['content'];
-    //console.log('配列サイズ→', array.length);
-    for (let i: number = 0; i < array.length; i++) {
-      //console.log('Document data2:', documentSnapshot.get('content')[i]);
-      setLanguage1(documentSnapshot.get('content'));
-    }
-  }
-});
 
 const data = [
   {
