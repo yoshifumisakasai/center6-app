@@ -136,7 +136,7 @@ const data = [
 export default function PDF() {
 
   //PDF出力データ取得Add commentMore actions
-  const [front_language1, setLanguage1] = useState<DocumentData>([]);
+  // const [front_language1, setLanguage1] = useState<DocumentData>([]);
 
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
@@ -145,10 +145,10 @@ export default function PDF() {
       //console.log('Document data1:', documentSnapshot.get('content'));
       const array = documentSnapshot.data()['content'];
       //console.log('配列サイズ→', array.length);
-      for (let i: number = 0; i < array.length; i++) {
+      // for (let i: number = 0; i < array.length; i++) {
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        setLanguage1(documentSnapshot.get('content'));
-      }
+        // setLanguage1(documentSnapshot.get('content'));
+      // }
     }
   });
   return (
