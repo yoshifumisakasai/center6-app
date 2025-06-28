@@ -187,16 +187,12 @@ getDoc(usersCollectionRef1).then((documentSnapshot) => {
                     インフラ
                     */}
               <Text style={styles.tableColHeader}>大項目</Text>
-              <Text style={styles.tableColHeader}>中項目</Text>
-              <Text style={styles.tableColHeader}>単位</Text>
-              <Text style={styles.tableColHeader}>単価</Text>
-              <Text style={styles.tableColHeader}>金額</Text>
+
             </View>
 
             {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
-                <Text style={styles.tableCol}>{index}</Text>
 
               </View>
             ))}
