@@ -195,11 +195,11 @@ export default function PDF() {
 
             {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
-                <Text style={styles.tableCol}>{content}</Text>
-                <Text style={styles.tableCol}>{content}</Text>
-                <Text style={styles.tableCol}>{content}</Text>
-                <Text style={styles.tableCol}>{content}</Text>
-                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>✖</Text>
+                <Text style={styles.tableCol}>〇</Text>
+                <Text style={styles.tableCol}>✖</Text>
+                <Text style={styles.tableCol}>✖</Text>
+                <Text style={styles.tableCol}>〇</Text>
               </View>
             ))}
           </View>
