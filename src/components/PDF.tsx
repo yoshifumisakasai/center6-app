@@ -139,21 +139,21 @@ const data = [
 
 export default function PDF() {
   //PDF出力データ取得
-const [front_language1, setLanguage1] = useState<DocumentData>([]);
+  const [front_language1, setLanguage1] = useState<DocumentData>([]);
 
-const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-getDoc(usersCollectionRef1).then((documentSnapshot) => {
-  if (documentSnapshot.exists()) {
-    // setLanguage2(documentSnapshot.data());
-    //console.log('Document data1:', documentSnapshot.get('content'));
-    const array = documentSnapshot.data()['content'];
-    //console.log('配列サイズ→', array.length);
-    for (let i: number = 0; i < array.length; i++) {
-      //console.log('Document data2:', documentSnapshot.get('content')[i]);
-      setLanguage1(documentSnapshot.get('content'));
+  const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+  getDoc(usersCollectionRef1).then((documentSnapshot) => {
+    if (documentSnapshot.exists()) {
+      // setLanguage2(documentSnapshot.data());
+      //console.log('Document data1:', documentSnapshot.get('content'));
+      const array = documentSnapshot.data()['content'];
+      //console.log('配列サイズ→', array.length);
+      for (let i: number = 0; i < array.length; i++) {
+        //console.log('Document data2:', documentSnapshot.get('content')[i]);
+        setLanguage1(documentSnapshot.get('content'));
+      }
     }
-  }
-});
+  });
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -187,13 +187,19 @@ getDoc(usersCollectionRef1).then((documentSnapshot) => {
                     インフラ
                     */}
               <Text style={styles.tableColHeader}>大項目</Text>
-
+              <Text style={styles.tableColHeader}>中項目</Text>
+              <Text style={styles.tableColHeader}>単位</Text>
+              <Text style={styles.tableColHeader}>単価</Text>
+              <Text style={styles.tableColHeader}>金額</Text>
             </View>
 
             {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
-
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
               </View>
             ))}
           </View>
