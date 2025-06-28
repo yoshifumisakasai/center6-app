@@ -2,7 +2,7 @@ import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/rendere
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
 import { doc, DocumentData, getDoc } from "firebase/firestore";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { db } from "./FirebaseConfig";
 
 
@@ -193,7 +193,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
 
-            {data.map((content: any, index: any) => (
+            {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>✖</Text>
                 <Text style={styles.tableCol}>〇</Text>
