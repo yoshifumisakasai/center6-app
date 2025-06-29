@@ -140,7 +140,6 @@ const data = [
 export default function PDF() {
   //PDF出力データ取得
   const [front_language1, setLanguage1] = useState<DocumentData>([]);
-
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
@@ -150,7 +149,8 @@ export default function PDF() {
       //console.log('配列サイズ→', array.length);
       for (let i: number = 0; i < array.length; i++) {
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        setLanguage1(documentSnapshot.get('content'));
+        const id = useRef(documentSnapshot.data()['content']);
+        setLanguage1(id.current.value)
       }
     }
   });
