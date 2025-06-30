@@ -149,10 +149,10 @@ export default function PDF() {
       const array = documentSnapshot.data()['content'];
       //console.log('配列サイズ→', array.length);
       for (let i: number = 0; i < array.length; i++) {
-        setLanguage1(documentSnapshot.get('content'));
+        prevCount.current =documentSnapshot.get('content');
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
       }
-      prevCount.current = front_language1
+      // prevCount.current = front_language1
       console.log('prevCount.current',prevCount.current)
     }
   });
