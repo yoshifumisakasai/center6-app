@@ -153,7 +153,7 @@ export default function PDF() {
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
       }
       prevCount.current = front_language1
-
+      console.log('prevCount.current',prevCount.current)
     }
   });
   return (
