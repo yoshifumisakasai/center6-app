@@ -149,7 +149,7 @@ export default function PDF() {
       const array = documentSnapshot.data()['content'];
       console.log('配列サイズ→', array.length);
       for (let i: number = 0; i < array.length; i++) {
-        setLanguage1(documentSnapshot.get('content'));
+        // setLanguage1(documentSnapshot.get('content'));
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
         console.log('回目.current',i)
       }
