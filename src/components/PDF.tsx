@@ -141,17 +141,19 @@ export default function PDF() {
   //PDF出力データ取得
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  const prevCount = useRef([null]);
+  const prevCount = useRef([]);
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
       //console.log('Document data1:', documentSnapshot.get('content'));
       const array = documentSnapshot.data()['content'];
       console.log('配列サイズ→', array.length);
+      prevCount.current = documentSnapshot.get('content');
+
       for (let i: number = 0; i < array.length; i++) {
         // setLanguage1(documentSnapshot.get('content'));
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        prevCount.current.push(documentSnapshot.get('content')[i])
+        // prevCount.current.push(documentSnapshot.get('content')[i])
         console.log('documentデータ', documentSnapshot.get('content')[i])
         console.log('回目.current', i)
         console.log('prevCount.CURRENT', prevCount.current)
