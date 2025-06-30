@@ -195,7 +195,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
 
-            {prevCount.current.map((content: any, index: any) => (
+            {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
