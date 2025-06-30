@@ -139,8 +139,9 @@ const data = [
 
 export default function PDF() {
   //PDF出力データ取得
-  const [front_language1, setLanguage1] = useState<DocumentData>([]);
+  const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+  const prevCount = useRef([null]);
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
@@ -148,10 +149,11 @@ export default function PDF() {
       const array = documentSnapshot.data()['content'];
       //console.log('配列サイズ→', array.length);
       for (let i: number = 0; i < array.length; i++) {
+        setLanguage1(documentSnapshot.get('content'));
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        const id = useRef(documentSnapshot.data()['content']);
-        setLanguage1(id.current.value)
       }
+      prevCount.current = front_language1
+
     }
   });
   return (
@@ -193,7 +195,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
 
-            {front_language1.map((content: any, index: any) => (
+            {prevCount.current.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>✖</Text>
                 <Text style={styles.tableCol}>〇</Text>
