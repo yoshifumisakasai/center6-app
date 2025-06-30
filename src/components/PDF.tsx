@@ -141,7 +141,7 @@ export default function PDF() {
   //PDF出力データ取得
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  const prevCount = useRef([Document]);
+  const prevCount = useRef([null]);
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
