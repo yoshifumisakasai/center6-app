@@ -151,6 +151,7 @@ export default function PDF() {
       for (let i: number = 0; i < array.length; i++) {
         setLanguage1(documentSnapshot.get('content'));
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
+        console.log('回目.current',i)
       }
       prevCount.current = front_language1
       console.log('prevCount.current',prevCount.current)
