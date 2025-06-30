@@ -141,7 +141,7 @@ export default function PDF() {
   //PDF出力データ取得
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  const prevCount = useRef([null]);
+  const prevCount = useRef([]);
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
@@ -195,7 +195,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
 
-            {front_language1.map((content: any, index: any) => (
+            {prevCount.current.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
