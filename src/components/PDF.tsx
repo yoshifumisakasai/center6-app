@@ -152,6 +152,7 @@ export default function PDF() {
         // setLanguage1(documentSnapshot.get('content'));
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
         prevCount.current.push(documentSnapshot.get('content')[i])
+        console.log('documentデータ',documentSnapshot.get('content')[i])
         console.log('回目.current',i)
       }
       prevCount.current = front_language1
