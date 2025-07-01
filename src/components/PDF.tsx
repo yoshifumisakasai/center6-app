@@ -150,7 +150,7 @@ export default function PDF() {
       array = documentSnapshot.data()['content'];
       console.log('配列サイズ→', array.length);
       prevCount.current = documentSnapshot.get('content');
-
+      setLanguage1(prevCount.current)
       for (let i: number = 0; i < array.length; i++) {
         // setLanguage1(documentSnapshot.get('content'));
         //console.log('Document data2:', documentSnapshot.get('content')[i]);
