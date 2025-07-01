@@ -142,11 +142,13 @@ export default function PDF() {
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
   const prevCount = useRef([]);
+  prevCount.current;
+  let array = null;
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
       //console.log('Document data1:', documentSnapshot.get('content'));
-      const array = documentSnapshot.data()['content'];
+      array = documentSnapshot.data()['content'];
       console.log('配列サイズ→', array.length);
       prevCount.current = documentSnapshot.get('content');
 
