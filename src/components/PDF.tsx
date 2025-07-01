@@ -142,7 +142,6 @@ export default function PDF() {
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
   const prevCount = useRef([]);
-  prevCount.current;
   let array = null;
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
