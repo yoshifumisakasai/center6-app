@@ -138,6 +138,12 @@ const data = [
 ];
 
 export default function PDF() {
+
+  const increment = useCallback((x:any) => {
+    setLanguage1(x)
+  }, [])
+
+
   //PDF出力データ取得
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
@@ -150,9 +156,7 @@ export default function PDF() {
       array = documentSnapshot.data()['content'];
       console.log('配列サイズ→', array.length);
       prevCount.current = documentSnapshot.get('content');
-       const increment = useCallback(() => {
-    setLanguage1(documentSnapshot.data()['content'])
-  }, [])
+       increment(documentSnapshot.get('content'))
       // setLanguage1([])
       // setLanguage1(prevCount.current)
       // for (let i: number = 0; i < array.length; i++) {
