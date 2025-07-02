@@ -2,7 +2,7 @@ import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/rendere
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
 import { doc, DocumentData, getDoc } from "firebase/firestore";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { db } from "./FirebaseConfig";
 
 
@@ -150,6 +150,9 @@ export default function PDF() {
       array = documentSnapshot.data()['content'];
       console.log('配列サイズ→', array.length);
       prevCount.current = documentSnapshot.get('content');
+       const increment = useCallback(() => {
+    setLanguage1(documentSnapshot.data()['content'])
+  }, [])
       // setLanguage1([])
       // setLanguage1(prevCount.current)
       // for (let i: number = 0; i < array.length; i++) {
@@ -204,7 +207,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
 
-            {prevCount.current.map((content: any, index: any) => (
+            {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
