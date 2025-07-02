@@ -139,7 +139,7 @@ const data = [
 
 export default function PDF() {
 
-  const increment = useCallback((x:any) => {
+  const increment = useCallback((x: any) => {
     setLanguage1(x)
   }, [])
 
@@ -147,16 +147,16 @@ export default function PDF() {
   //PDF出力データ取得
   const [front_language1, setLanguage1] = useState([]);
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  const prevCount = useRef([]);
-  let array = null;
+  // const prevCount = useRef([]);
+  // let array = null;
   getDoc(usersCollectionRef1).then((documentSnapshot) => {
     if (documentSnapshot.exists()) {
       // setLanguage2(documentSnapshot.data());
       //console.log('Document data1:', documentSnapshot.get('content'));
-      array = documentSnapshot.data()['content'];
-      console.log('配列サイズ→', array.length);
-      prevCount.current = documentSnapshot.get('content');
-       increment(documentSnapshot.get('content'))
+      // array = documentSnapshot.data()['content'];
+      // console.log('配列サイズ→', array.length);
+      // prevCount.current = documentSnapshot.get('content');
+      increment(documentSnapshot.get('content'))
       // setLanguage1([])
       // setLanguage1(prevCount.current)
       // for (let i: number = 0; i < array.length; i++) {
@@ -169,7 +169,7 @@ export default function PDF() {
 
       // }
       // prevCount.current = front_language1
-      console.log('prevCount.current', prevCount.current)
+      // console.log('prevCount.current', prevCount.current)
     }
   });
   return (
