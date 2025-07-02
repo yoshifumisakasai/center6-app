@@ -211,8 +211,16 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-
-            {data.map((content: any, index: any) => (
+            {data[0].items.map((item, index) => (
+              <View style={styles.tableRow} key={index}>
+                <Text style={styles.tableCol}>{item.name}</Text>
+                <Text style={styles.tableCol}>{item.surface}</Text>
+                <Text style={styles.tableCol}>{item.thickness}</Text>
+                <Text style={styles.tableCol}>{item.width}</Text>
+                <Text style={styles.tableCol}>{item.length}</Text>
+              </View>
+            ))}
+            {/* {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
@@ -220,7 +228,7 @@ export default function PDF() {
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
               </View>
-            ))}
+            ))} */}
           </View>
         </View>
       </Page>
