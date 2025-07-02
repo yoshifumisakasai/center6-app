@@ -157,6 +157,7 @@ export default function PDF() {
       // console.log('配列サイズ→', array.length);
       // prevCount.current = documentSnapshot.get('content');
       increment(documentSnapshot.get('content'))
+      console.log("呼び出し実行")
       // setLanguage1([])
       // setLanguage1(prevCount.current)
       // for (let i: number = 0; i < array.length; i++) {
