@@ -152,15 +152,15 @@ export default function PDF() {
       prevCount.current = documentSnapshot.get('content');
       setLanguage1([])
       setLanguage1(prevCount.current)
-      for (let i: number = 0; i < array.length; i++) {
-        // setLanguage1(documentSnapshot.get('content'));
-        //console.log('Document data2:', documentSnapshot.get('content')[i]);
-        // prevCount.current.push(documentSnapshot.get('content')[i])
-        console.log('documentデータ', documentSnapshot.get('content')[i])
-        console.log('回目.current', i)
-        console.log('prevCount.CURRENT', prevCount.current)
+      // for (let i: number = 0; i < array.length; i++) {
+      //   // setLanguage1(documentSnapshot.get('content'));
+      //   //console.log('Document data2:', documentSnapshot.get('content')[i]);
+      //   // prevCount.current.push(documentSnapshot.get('content')[i])
+      //   console.log('documentデータ', documentSnapshot.get('content')[i])
+      //   console.log('回目.current', i)
+      //   console.log('prevCount.CURRENT', prevCount.current)
 
-      }
+      // }
       // prevCount.current = front_language1
       console.log('prevCount.current', prevCount.current)
     }
