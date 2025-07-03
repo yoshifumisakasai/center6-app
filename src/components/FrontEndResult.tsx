@@ -61,24 +61,24 @@ const FrontEndResult = () => {
     console.log('内容です2', level1_Array_content)
 
     //削除＆追加
-    // const viewPdf = async (name: any) => {
-    //     navigate("/viewPdf/")
-    // };
-    // interface OnRenderProps {
-    //     blob?: Blob;
-    //     loading: boolean;
-    //     error: Error | null;
-    // }
-    // interface BlobProviderProps {
-    //     document: React.ReactElement<DocumentProps>;
-    //     children: (params: BlobProviderParams) => React.ReactNode;
-    // }
-    // interface UsePDFInstance {
-    //     loading: boolean;
-    //     blob: Blob | null;
-    //     url: string | null;
-    //     error: string | null;
-    // }
+    const viewPdf = async (name: any) => {
+        navigate("/viewPdf/")
+    };
+    interface OnRenderProps {
+        blob?: Blob;
+        loading: boolean;
+        error: Error | null;
+    }
+    interface BlobProviderProps {
+        document: React.ReactElement<DocumentProps>;
+        children: (params: BlobProviderParams) => React.ReactNode;
+    }
+    interface UsePDFInstance {
+        loading: boolean;
+        blob: Blob | null;
+        url: string | null;
+        error: string | null;
+    }
 
     const data = {
         // x 軸のラベル
