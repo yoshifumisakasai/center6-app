@@ -29,9 +29,9 @@ import { Bar } from 'react-chartjs-2'
 import 'chart.js/auto' // 今回はバンドルサイズ気にしないので、autoを使う
 import SideMenu_temp from "./SideMenu_temp";
 import SideMenu_top from "./SideMenu_top";
-import { BlobProvider, BlobProviderParams, DocumentProps, usePDF } from "@react-pdf/renderer";
+import { BlobProvider, BlobProviderParams, DocumentProps, PDFViewer, usePDF } from "@react-pdf/renderer";
 import PDF from "./PDF";
-import React from "react";
+import React, { useMemo } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { PDFComponent } from "./PDFComponent";
 const FrontEndResult = () => {
@@ -114,9 +114,19 @@ const FrontEndResult = () => {
     // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
-    if (instance.loading) return <div>Loading ...</div>;
-
-    if (instance.error) return <div>Something went wrong: {instance.error}</div>;
+      const pdfComponent = useMemo(() =>{
+      return (
+             <div
+               style={{
+                 height: "100vh",
+               }}
+             >
+               <PDFViewer width="100%" height="100%">
+                 <PDF />
+               </PDFViewer>
+             </div>
+      )
+  }, [url, loading])
     console.log('インスタンス', instance);
     console.log('URL', instance.url);
     //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
