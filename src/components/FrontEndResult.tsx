@@ -108,7 +108,7 @@ const FrontEndResult = () => {
     };
 
 
-    // const [instance, updateInstance] = usePDF({ document: <PDF /> });
+     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     // if (instance.loading) return <div>Loading ...</div>;
 
     // if (instance.error) return <div>Something went wrong: {instance.error}</div>;
