@@ -143,7 +143,6 @@ const FrontEndResult = () => {
     return (
 
         <>
-            <PDFComponent pdfUrl={url} isLoading={loading} />
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh">
                     <SideMenu_top />
