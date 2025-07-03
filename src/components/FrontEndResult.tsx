@@ -166,6 +166,7 @@ const FrontEndResult = () => {
                         <br />
                         <br />
                         <br />
+                        {/*
                         <Flex>
                             <Button colorScheme="yellow" size="sm" variant="outline" leftIcon={<AddIcon />} onClick={() => viewPdf('dummy')}>PDF表示</Button>
 
@@ -176,7 +177,7 @@ const FrontEndResult = () => {
 
 
                         </Flex>
-
+                        */}
                     </Flex>
 
                 </Flex>
