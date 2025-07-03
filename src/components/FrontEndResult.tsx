@@ -114,13 +114,12 @@ const FrontEndResult = () => {
     // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
+    let url_s = url as string;
       const pdfComponent = useMemo(() =>{
       return (
-             <div
-            
-             >
-              
-             </div>
+            <div>
+            {loading ? <p>Loading...</p> : <iframe src={url_s} width="100%" height="500px" />}
+          </div>
       )
   }, [url, loading])
     console.log('インスタンス', instance);
