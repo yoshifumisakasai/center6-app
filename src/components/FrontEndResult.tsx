@@ -33,6 +33,7 @@ import { BlobProvider, BlobProviderParams, DocumentProps, usePDF } from "@react-
 import PDF from "./PDF";
 import React from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFComponent } from "./PDFComponent";
 const FrontEndResult = () => {
 
     const location = useLocation();
@@ -107,22 +108,26 @@ const FrontEndResult = () => {
         ],
     };
 
+    //usePDF 再レンダリング
+    // 再レンダリングを抑制するには、usePDFフックの値を参照するコンポーネントの再レンダリングを最適化
+    // usePDFフック自体が再レンダリングを引き起こすのではなく、
+    // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
+    const [instance, updateInstance] = usePDF({ document: <PDF /> });
+    const { url, loading } = instance;
+    if (instance.loading) return <div>Loading ...</div>;
 
-     const [instance, updateInstance] = usePDF({ document: <PDF /> });
-    // if (instance.loading) return <div>Loading ...</div>;
-
-    // if (instance.error) return <div>Something went wrong: {instance.error}</div>;
-    // console.log('インスタンス', instance);
-    // console.log('URL', instance.url);
+    if (instance.error) return <div>Something went wrong: {instance.error}</div>;
+    console.log('インスタンス', instance);
+    console.log('URL', instance.url);
     //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
     //string | null 型を、string | undefined型に代入しようとしているのでエラー
 
     //String型へ型変換
-    // const url_j = instance.url as string;
+    const url_j = instance.url as string;
 
-    // console.log('ローディング', instance.loading);
-    // console.log('エラー', instance.error);
-    // console.log('BLOG', instance.blob)
+    console.log('ローディング', instance.loading);
+    console.log('エラー', instance.error);
+    console.log('BLOG', instance.blob)
 
     let goBack = () => {
         navigate(-1)
@@ -134,7 +139,7 @@ const FrontEndResult = () => {
     return (
 
         <>
-
+            <PDFComponent pdfUrl={url} isLoading={loading} />
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh">
                     <SideMenu_top />
