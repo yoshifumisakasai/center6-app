@@ -61,9 +61,9 @@ const FrontEndResult = () => {
     console.log('内容です2', level1_Array_content)
 
     //削除＆追加
-    const viewPdf = async (name: any) => {
-        navigate("/viewPdf/")
-    };
+    // const viewPdf = async (name: any) => {
+    //     navigate("/viewPdf/")
+    // };
     // interface OnRenderProps {
     //     blob?: Blob;
     //     loading: boolean;
@@ -108,21 +108,21 @@ const FrontEndResult = () => {
     };
 
 
-    const [instance, updateInstance] = usePDF({ document: <PDF /> });
-    if (instance.loading) return <div>Loading ...</div>;
+    // const [instance, updateInstance] = usePDF({ document: <PDF /> });
+    // if (instance.loading) return <div>Loading ...</div>;
 
-    if (instance.error) return <div>Something went wrong: {instance.error}</div>;
-    console.log('インスタンス', instance);
-    console.log('URL', instance.url);
+    // if (instance.error) return <div>Something went wrong: {instance.error}</div>;
+    // console.log('インスタンス', instance);
+    // console.log('URL', instance.url);
     //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
     //string | null 型を、string | undefined型に代入しようとしているのでエラー
 
     //String型へ型変換
-    const url_j = instance.url as string;
+    // const url_j = instance.url as string;
 
-    console.log('ローディング', instance.loading);
-    console.log('エラー', instance.error);
-    console.log('BLOG', instance.blob)
+    // console.log('ローディング', instance.loading);
+    // console.log('エラー', instance.error);
+    // console.log('BLOG', instance.blob)
 
     let goBack = () => {
         navigate(-1)
