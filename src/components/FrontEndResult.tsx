@@ -115,10 +115,9 @@ const FrontEndResult = () => {
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
     const pdfComponent = useMemo(() => {
-        let url_s = url as string;
         return (
             <div>
-                {loading ? <p>Loading...</p> : <iframe src={url_s} width="100%" height="500px" />}
+                {loading ? <p>Loading...</p> : <p>Loaded</p>}
             </div>
         )
     }, [url, loading])
