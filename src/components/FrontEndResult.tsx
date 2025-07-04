@@ -34,7 +34,10 @@ import PDF from "./PDF";
 import React, { useMemo } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { PDFComponent } from "./PDFComponent";
-const FrontEndResult = () => {
+
+const [instance, updateInstance] = usePDF({ document: <PDF /> });
+const { url, loading } = instance;
+const FrontEndResult = useMemo(() => {
 
     const location = useLocation();
     let navigate = useNavigate();
@@ -112,15 +115,15 @@ const FrontEndResult = () => {
     // 再レンダリングを抑制するには、usePDFフックの値を参照するコンポーネントの再レンダリングを最適化
     // usePDFフック自体が再レンダリングを引き起こすのではなく、
     // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
-    const [instance, updateInstance] = usePDF({ document: <PDF /> });
-    const { url, loading } = instance;
-    const pdfComponent = useMemo(() => {
-        return (
-            <div>
-                {loading ? <p>Loading...</p> : <p>Loaded</p>}
-            </div>
-        )
-    }, [url, loading])
+    // const [instance, updateInstance] = usePDF({ document: <PDF /> });
+    // const { url, loading } = instance;
+    // const pdfComponent = useMemo(() => {
+    //     return (
+    //         <div>
+    //             {loading ? <p>Loading...</p> : <p>Loaded</p>}
+    //         </div>
+    //     )
+    // }, [url, loading])
     console.log('インスタンス', instance);
     console.log('URL', instance.url);
     //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
@@ -203,5 +206,5 @@ const FrontEndResult = () => {
         </>
 
     );
-}
+}, [url, loading])
 export default FrontEndResult;
