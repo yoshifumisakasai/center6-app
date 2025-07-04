@@ -35,10 +35,10 @@ import React, { useMemo } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { PDFComponent } from "./PDFComponent";
 
-const [instance, updateInstance] = usePDF({ document: <PDF /> });
-const { url, loading } = instance;
-const FrontEndResult = useMemo(() => {
 
+const FrontEndResult = useMemo(() => {
+    const [instance, updateInstance] = usePDF({ document: <PDF /> });
+    const { url, loading } = instance;
     const location = useLocation();
     let navigate = useNavigate();
     const level1_Array: string[] = location.state.level1;
@@ -206,5 +206,5 @@ const FrontEndResult = useMemo(() => {
         </>
 
     );
-}, [url, loading])
+}, [])
 export default FrontEndResult;
