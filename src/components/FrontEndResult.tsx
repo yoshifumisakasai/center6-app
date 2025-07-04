@@ -143,6 +143,8 @@ const FrontEndResult = useMemo(() => {
     const graph = () => {
         navigate("/graph/")
     }
+
+    
     return (
 
         <>
