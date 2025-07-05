@@ -138,6 +138,9 @@ export default function PDF() {
 
   const [front_language1, setLanguage1] = useState([]);
 
+  //  useEffectの依存配列を適切に設定する:
+  //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
+  //これにより、不要な再レンダリングを抑制できます。﻿
   useEffect(() => {
 
     // const increment = useCallback((x: any) => {

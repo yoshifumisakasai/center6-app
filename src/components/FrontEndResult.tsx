@@ -31,11 +31,12 @@ import SideMenu_temp from "./SideMenu_temp";
 import SideMenu_top from "./SideMenu_top";
 import { BlobProvider, BlobProviderParams, DocumentProps, PDFViewer, usePDF } from "@react-pdf/renderer";
 import PDF from "./PDF";
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
 
 const FrontEndResult = () => {
+    const isFirstRender = useRef(true);
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
 
@@ -86,8 +87,13 @@ const FrontEndResult = () => {
         navigate("/viewPdf/")
     };
 
+    //useMemoで計算結果をメモ化する:
+    //useMemoを使うことで、依存関係が変わらない限り、同じ計算を何度も実行することを防ぎ、再レンダリングの負荷を軽減できます。
     const pdfComponent = useMemo(() => {
-
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
 
 
         console.log('基礎レベル（レベル1）', location.state.level1);
