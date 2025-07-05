@@ -143,6 +143,8 @@ export default function PDF() {
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
   //これにより、不要な再レンダリングを抑制できます。﻿
   useEffect(() => {
+
+    // 初回レンダリング時にuseEffectを実行しないようにする方法
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
