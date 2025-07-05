@@ -159,6 +159,7 @@ export default function PDF() {
         // increment(documentSnapshot.get('content'))
         // setLanguage1(documentSnapshot.get('content'))
         countRef.current = documentSnapshot.get('content');
+        console.log('countRefの中身は',countRef.current);
       }
     });
 
