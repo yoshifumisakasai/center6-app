@@ -1,7 +1,7 @@
 import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
@@ -135,23 +135,24 @@ const data = [
 
 export default function PDF() {
 
-  // const [front_language1, setLanguage1] = useState([]);
 
 
-  // const front_lang_comp = useMemo(() => {
-  //   // const increment = useCallback((x: any) => {
-  //   //   setLanguage1(x)
-  //   // }, [])
-  //   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+    useEffect(() => {
+        const [front_language1, setLanguage1] = useState([]);
 
-  //   getDoc(usersCollectionRef1).then((documentSnapshot) => {
-  //     if (documentSnapshot.exists()) {
-  //       // increment(documentSnapshot.get('content'))
-  //       setLanguage1(documentSnapshot.get('content'))
-  //     }
-  //   });
+    // const increment = useCallback((x: any) => {
+    //   setLanguage1(x)
+    // }, [])
+    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
-  // }, [front_language1])
+    getDoc(usersCollectionRef1).then((documentSnapshot) => {
+      if (documentSnapshot.exists()) {
+        // increment(documentSnapshot.get('content'))
+        setLanguage1(documentSnapshot.get('content'))
+      }
+    });
+
+  }, [])
 
   return (
     <Document>
