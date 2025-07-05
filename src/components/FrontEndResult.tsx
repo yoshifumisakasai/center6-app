@@ -40,6 +40,9 @@ const FrontEndResult = () => {
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
 
+    //String型へ型変換
+    const url_j = instance.url as string;
+
     const location = useLocation();
     let navigate = useNavigate();
     const level1_Array: string[] = location.state.level1;
@@ -79,7 +82,10 @@ const FrontEndResult = () => {
     let goBack = () => {
         navigate(-1)
     };
-
+    //削除＆追加
+    const viewPdf = async (name: any) => {
+        navigate("/viewPdf/")
+    };
 
     const pdfComponent = useMemo(() => {
 
@@ -102,10 +108,7 @@ const FrontEndResult = () => {
         console.log('内容です1', level1_Array)
         console.log('内容です2', level1_Array_content)
 
-        //削除＆追加
-        const viewPdf = async (name: any) => {
-            navigate("/viewPdf/")
-        };
+
         interface OnRenderProps {
             blob?: Blob;
             loading: boolean;
@@ -142,8 +145,7 @@ const FrontEndResult = () => {
         //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
         //string | null 型を、string | undefined型に代入しようとしているのでエラー
 
-        //String型へ型変換
-        const url_j = instance.url as string;
+
 
         console.log('ローディング', instance.loading);
         console.log('エラー', instance.error);
@@ -189,7 +191,7 @@ const FrontEndResult = () => {
                         <br />
                         <br />
                         <br />
-                        {/*
+
                         <Flex>
                             <Button colorScheme="yellow" size="sm" variant="outline" leftIcon={<AddIcon />} onClick={() => viewPdf('dummy')}>PDF表示</Button>
 
@@ -200,7 +202,7 @@ const FrontEndResult = () => {
 
 
                         </Flex>
-                        */}
+
                     </Flex>
 
                 </Flex>
