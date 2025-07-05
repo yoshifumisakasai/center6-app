@@ -139,14 +139,15 @@ export default function PDF() {
 
 
   const front_lang_comp = useMemo(() => {
-    const increment = useCallback((x: any) => {
-      setLanguage1(x)
-    }, [])
+    // const increment = useCallback((x: any) => {
+    //   setLanguage1(x)
+    // }, [])
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
       if (documentSnapshot.exists()) {
-        increment(documentSnapshot.get('content'))
+        // increment(documentSnapshot.get('content'))
+        setLanguage1(documentSnapshot.get('content'))
       }
     });
 
