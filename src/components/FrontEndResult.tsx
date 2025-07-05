@@ -37,54 +37,18 @@ import { PDFComponent } from "./PDFComponent";
 
 
 const FrontEndResult = () => {
-    const pdfComponent = useMemo(() => {
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
+
     const location = useLocation();
     let navigate = useNavigate();
     const level1_Array: string[] = location.state.level1;
     const level2_Array: string[] = location.state.level2;
     const level3_Array: string[] = location.state.level3;
 
-    console.log('基礎レベル（レベル1）', location.state.level1);
-    console.log('現場レベル（レベル2）', location.state.level2);
-    console.log('応用レベル（レベル3）', location.state.level3);
-
-    //4,3,2,1だったら、[4,3,2,1]の文字数：11
-    //3,1,2だったら、[3,1,2]：7
-    //1,2だったら、
-    console.log("レベル１：" + Object.keys(level1_Array).length);
-    console.log("レベル２：" + Object.keys(level2_Array).length);
-    console.log("レベル３：" + Object.keys(level3_Array).length);
-
     const lv1 = Object.keys(level1_Array).length;
     const lv2 = Object.keys(level2_Array).length;
     const lv3 = Object.keys(level3_Array).length;
-
-    const level1_Array_content = [...level1_Array];
-    console.log('内容です1', level1_Array)
-    console.log('内容です2', level1_Array_content)
-
-    //削除＆追加
-    const viewPdf = async (name: any) => {
-        navigate("/viewPdf/")
-    };
-    interface OnRenderProps {
-        blob?: Blob;
-        loading: boolean;
-        error: Error | null;
-    }
-    interface BlobProviderProps {
-        document: React.ReactElement<DocumentProps>;
-        children: (params: BlobProviderParams) => React.ReactNode;
-    }
-    interface UsePDFInstance {
-        loading: boolean;
-        blob: Blob | null;
-        url: string | null;
-        error: string | null;
-    }
-
     const data = {
         // x 軸のラベル
         labels: ['基礎レベル', '現場レベル', '上級レベル'],
@@ -112,38 +76,84 @@ const FrontEndResult = () => {
         ],
     };
 
-    //usePDF 再レンダリング
-    // 再レンダリングを抑制するには、usePDFフックの値を参照するコンポーネントの再レンダリングを最適化
-    // usePDFフック自体が再レンダリングを引き起こすのではなく、
-    // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
-    // const [instance, updateInstance] = usePDF({ document: <PDF /> });
-    // const { url, loading } = instance;
-    // const pdfComponent = useMemo(() => {
-    //     return (
-    //         <div>
-    //             {loading ? <p>Loading...</p> : <p>Loaded</p>}
-    //         </div>
-    //     )
-    // }, [url, loading])
-    console.log('インスタンス', instance);
-    console.log('URL', instance.url);
-    //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
-    //string | null 型を、string | undefined型に代入しようとしているのでエラー
-
-    //String型へ型変換
-    const url_j = instance.url as string;
-
-    console.log('ローディング', instance.loading);
-    console.log('エラー', instance.error);
-    console.log('BLOG', instance.blob)
-
     let goBack = () => {
         navigate(-1)
     };
 
-    const graph = () => {
-        navigate("/graph/")
-    }
+
+    const pdfComponent = useMemo(() => {
+
+
+
+        console.log('基礎レベル（レベル1）', location.state.level1);
+        console.log('現場レベル（レベル2）', location.state.level2);
+        console.log('応用レベル（レベル3）', location.state.level3);
+
+        //4,3,2,1だったら、[4,3,2,1]の文字数：11
+        //3,1,2だったら、[3,1,2]：7
+        //1,2だったら、
+        console.log("レベル１：" + Object.keys(level1_Array).length);
+        console.log("レベル２：" + Object.keys(level2_Array).length);
+        console.log("レベル３：" + Object.keys(level3_Array).length);
+
+
+
+        const level1_Array_content = [...level1_Array];
+        console.log('内容です1', level1_Array)
+        console.log('内容です2', level1_Array_content)
+
+        //削除＆追加
+        const viewPdf = async (name: any) => {
+            navigate("/viewPdf/")
+        };
+        interface OnRenderProps {
+            blob?: Blob;
+            loading: boolean;
+            error: Error | null;
+        }
+        interface BlobProviderProps {
+            document: React.ReactElement<DocumentProps>;
+            children: (params: BlobProviderParams) => React.ReactNode;
+        }
+        interface UsePDFInstance {
+            loading: boolean;
+            blob: Blob | null;
+            url: string | null;
+            error: string | null;
+        }
+
+
+
+        //usePDF 再レンダリング
+        // 再レンダリングを抑制するには、usePDFフックの値を参照するコンポーネントの再レンダリングを最適化
+        // usePDFフック自体が再レンダリングを引き起こすのではなく、
+        // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
+        // const [instance, updateInstance] = usePDF({ document: <PDF /> });
+        // const { url, loading } = instance;
+        // const pdfComponent = useMemo(() => {
+        //     return (
+        //         <div>
+        //             {loading ? <p>Loading...</p> : <p>Loaded</p>}
+        //         </div>
+        //     )
+        // }, [url, loading])
+        console.log('インスタンス', instance);
+        console.log('URL', instance.url);
+        //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
+        //string | null 型を、string | undefined型に代入しようとしているのでエラー
+
+        //String型へ型変換
+        const url_j = instance.url as string;
+
+        console.log('ローディング', instance.loading);
+        console.log('エラー', instance.error);
+        console.log('BLOG', instance.blob)
+
+
+
+        const graph = () => {
+            navigate("/graph/")
+        }
 
     }, [url, loading])
     return (
@@ -209,5 +219,5 @@ const FrontEndResult = () => {
         </>
 
     );
-}, [])
+};
 export default FrontEndResult;
