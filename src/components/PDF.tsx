@@ -136,8 +136,8 @@ const data = [
 export default function PDF() {
 
   const isFirstRender = useRef(true);
-
-  const [front_language1, setLanguage1] = useState([]);
+  const countRef = useRef([]);
+  // const [front_language1, setLanguage1] = useState([]);
 
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
@@ -157,7 +157,8 @@ export default function PDF() {
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
       if (documentSnapshot.exists()) {
         // increment(documentSnapshot.get('content'))
-        setLanguage1(documentSnapshot.get('content'))
+        // setLanguage1(documentSnapshot.get('content'))
+        countRef.current = documentSnapshot.get('content');
       }
     });
 
@@ -201,7 +202,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-            {front_language1.map((content: any, index: any) => (
+            {countRef.current.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
