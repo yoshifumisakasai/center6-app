@@ -145,10 +145,9 @@ export default function PDF() {
   useEffect(() => {
 
     // 初回レンダリング時にuseEffectを実行しないようにする方法
-    // if (isFirstRender.current) {
-    //   isFirstRender.current = false;
-    //   return;
-    // }
+      isFirstRender.current = false;
+      return;
+    
     // const increment = useCallback((x: any) => {
     //   setLanguage1(x)
     // }, [])
