@@ -33,7 +33,6 @@ import { BlobProvider, BlobProviderParams, DocumentProps, PDFViewer, usePDF } fr
 import PDF from "./PDF";
 import React, { useMemo } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { PDFComponent } from "./PDFComponent";
 
 
 const FrontEndResult = () => {
