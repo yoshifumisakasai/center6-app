@@ -203,6 +203,7 @@ export default function PDF() {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
+            <p>{countRef.current}</p>
             {countRef.current.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
