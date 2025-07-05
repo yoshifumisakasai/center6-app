@@ -36,7 +36,8 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import { PDFComponent } from "./PDFComponent";
 
 
-const FrontEndResult = useMemo(() => {
+const FrontEndResult = () => {
+    const pdfComponent = useMemo(() => {
     const [instance, updateInstance] = usePDF({ document: <PDF /> });
     const { url, loading } = instance;
     const location = useLocation();
@@ -144,7 +145,7 @@ const FrontEndResult = useMemo(() => {
         navigate("/graph/")
     }
 
-    
+    }, [url, loading])
     return (
 
         <>
