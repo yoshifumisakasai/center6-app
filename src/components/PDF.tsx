@@ -1,7 +1,7 @@
 import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
@@ -134,17 +134,24 @@ const data = [
 ];
 
 export default function PDF() {
-  // const increment = useCallback((x: any) => {
-  //   setLanguage1(x)
-  // }, [])
-  // const [front_language1, setLanguage1] = useState([]);
-  const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
-  getDoc(usersCollectionRef1).then((documentSnapshot) => {
-    if (documentSnapshot.exists()) {
-      // increment(documentSnapshot.get('content'))
-    }
-  });
+  const [front_language1, setLanguage1] = useState([]);
+
+
+  const front_lang_comp = useMemo(() => {
+    const increment = useCallback((x: any) => {
+      setLanguage1(x)
+    }, [])
+    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+
+    getDoc(usersCollectionRef1).then((documentSnapshot) => {
+      if (documentSnapshot.exists()) {
+        increment(documentSnapshot.get('content'))
+      }
+    });
+
+  }, [front_language1])
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
