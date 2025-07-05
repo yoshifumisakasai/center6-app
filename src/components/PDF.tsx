@@ -135,23 +135,23 @@ const data = [
 
 export default function PDF() {
 
-  const [front_language1, setLanguage1] = useState([]);
+  // const [front_language1, setLanguage1] = useState([]);
 
 
-  const front_lang_comp = useMemo(() => {
-    // const increment = useCallback((x: any) => {
-    //   setLanguage1(x)
-    // }, [])
-    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+  // const front_lang_comp = useMemo(() => {
+  //   // const increment = useCallback((x: any) => {
+  //   //   setLanguage1(x)
+  //   // }, [])
+  //   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
-    getDoc(usersCollectionRef1).then((documentSnapshot) => {
-      if (documentSnapshot.exists()) {
-        // increment(documentSnapshot.get('content'))
-        setLanguage1(documentSnapshot.get('content'))
-      }
-    });
+  //   getDoc(usersCollectionRef1).then((documentSnapshot) => {
+  //     if (documentSnapshot.exists()) {
+  //       // increment(documentSnapshot.get('content'))
+  //       setLanguage1(documentSnapshot.get('content'))
+  //     }
+  //   });
 
-  }, [front_language1])
+  // }, [front_language1])
 
   return (
     <Document>
