@@ -162,7 +162,7 @@ const FrontEndResult = () => {
             navigate("/graph/")
         }
 
-    }, [url, loading])
+    }, [])
     return (
 
         <>
