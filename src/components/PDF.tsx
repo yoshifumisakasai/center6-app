@@ -152,7 +152,7 @@ export default function PDF() {
       }
     });
 
-  }, [front_language1])
+  }, [])
 
   return (
     <Document>
