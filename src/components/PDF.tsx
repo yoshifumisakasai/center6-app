@@ -136,9 +136,9 @@ const data = [
 export default function PDF() {
 
 
+        const [front_language1, setLanguage1] = useState([]);
 
     useEffect(() => {
-        const [front_language1, setLanguage1] = useState([]);
 
     // const increment = useCallback((x: any) => {
     //   setLanguage1(x)
