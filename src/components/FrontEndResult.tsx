@@ -163,7 +163,7 @@ const FrontEndResult = () => {
                 <Flex w="100vw" h="100wh">
                     <SideMenu_top />
                     <SideMenu_temp />
-
+                    <PDFComponent pdfUrl={url} isLoading={loading} />
                     <Flex w="50vw" h="50wh" direction={"column"}>
                         <Bar data={data} />
                         <br />
