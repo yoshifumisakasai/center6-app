@@ -1,7 +1,7 @@
 import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
@@ -135,6 +135,7 @@ const data = [
 
 export default function PDF() {
 
+  const isFirstRender = useRef(true);
 
   const [front_language1, setLanguage1] = useState([]);
 
@@ -142,7 +143,10 @@ export default function PDF() {
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
   //これにより、不要な再レンダリングを抑制できます。﻿
   useEffect(() => {
-
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     // const increment = useCallback((x: any) => {
     //   setLanguage1(x)
     // }, [])
