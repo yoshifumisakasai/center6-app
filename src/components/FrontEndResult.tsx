@@ -39,11 +39,12 @@ import { db } from "./FirebaseConfig";
 
 const FrontEndResult = () => {
     const isFirstRender = useRef(true);
+          const [front_language1, setLanguage1] = useState([]);
+
       useEffect(() => {
     
 
         const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-      const [front_language1, setLanguage1] = useState([]);
 
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
           if (documentSnapshot.exists()) {
