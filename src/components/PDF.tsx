@@ -135,6 +135,7 @@ const data = [
 
 const PDF = (props: any) => {
 
+  const  param_d=props.front_language1;
   const isFirstRender = useRef(true);
   const countRef = useRef([]);
   // const [front_language1, setLanguage1] = useState([]);
@@ -203,7 +204,7 @@ const PDF = (props: any) => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-            {countRef.current.map((content: any, index: any) => (
+            {param_d.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
