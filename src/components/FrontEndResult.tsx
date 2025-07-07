@@ -31,13 +31,28 @@ import SideMenu_temp from "./SideMenu_temp";
 import SideMenu_top from "./SideMenu_top";
 import { BlobProvider, BlobProviderParams, DocumentProps, PDFViewer, usePDF } from "@react-pdf/renderer";
 import PDF from "./PDF";
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./FirebaseConfig";
 
 
 const FrontEndResult = () => {
     const isFirstRender = useRef(true);
-    const [instance, updateInstance] = usePDF({ document: <PDF /> });
+      useEffect(() => {
+    
+
+        const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+      const [front_language1, setLanguage1] = useState([]);
+
+        getDoc(usersCollectionRef1).then((documentSnapshot) => {
+          if (documentSnapshot.exists()) {
+            setLanguage1(documentSnapshot.get('content'))
+          }
+        });
+    
+      }, [])
+    const [instance, updateInstance] = usePDF({ document: <PDF  /> });
     const { url, loading } = instance;
 
     //String型へ型変換
