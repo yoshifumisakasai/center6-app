@@ -53,7 +53,7 @@ const FrontEndResult = () => {
         });
     
       }, [])
-    const [instance, updateInstance] = usePDF({ document: <PDF  /> });
+    const [instance, updateInstance] = usePDF({ document: <PDF  front_language1={front_language1}/> });
     const { url, loading } = instance;
 
     //String型へ型変換

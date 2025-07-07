@@ -133,7 +133,7 @@ const data = [
   },
 ];
 
-export default function PDF() {
+const PDF = (props: any) => {
 
   const isFirstRender = useRef(true);
   const countRef = useRef([]);
@@ -159,7 +159,7 @@ export default function PDF() {
         // increment(documentSnapshot.get('content'))
         // setLanguage1(documentSnapshot.get('content'))
         countRef.current = documentSnapshot.get('content');
-        console.log('countRefの中身は',countRef.current);
+        console.log('countRefの中身は', countRef.current);
       }
     });
 
@@ -218,3 +218,4 @@ export default function PDF() {
     </Document>
   );
 }
+export default PDF;
