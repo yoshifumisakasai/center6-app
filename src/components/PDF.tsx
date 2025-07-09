@@ -173,49 +173,11 @@ const PDF = (props: any) => {
     <Document>
 
       <Page size="A4" style={styles.page}>
-        <View>
-          <Text style={styles.header}>領収書</Text>
-          {countRef.current.map((item) => {
+        
+       
+     {countRef.current.map((item) => {
             return <li>{item}</li>;
           })}
-        </View>
-        <View style={styles.details}>
-          {data.map((detail, index) => (
-            <View style={styles.detailItem} key={index}>
-              <View style={styles.textVertical}>
-                <Text>株式会社〇〇</Text>
-                <Text>〇〇 御中</Text>
-              </View>
-              <View>
-                <Text>発行日{detail.value}</Text>
-                <View style={styles.company}>
-                  <Text>株式会社〇〇</Text>
-                  <Text>東京都〇〇〇〇〇〇〇〇〇〇</Text>
-                  <Text>TEL：00-0000-0000</Text>
-                </View>
-              </View>
-            </View>
-          ))}
-        </View>
-        <View>
-          <View style={styles.itemsTable}>
-            <View style={styles.tableRow}>
-              {/* 大項目
-                    フロントエンド
-                    バックエンド
-                    インフラ
-                    */}
-              <Text style={styles.tableColHeader}>大項目</Text>
-              <Text style={styles.tableColHeader}>中項目</Text>
-              <Text style={styles.tableColHeader}>単位</Text>
-              <Text style={styles.tableColHeader}>単価</Text>
-              <Text style={styles.tableColHeader}>金額</Text>
-            </View>
-           {countRef.current.map((item) => {
-            return <li>{item}</li>;
-          })}
-          </View>
-        </View>
       </Page>
     </Document>
   );
