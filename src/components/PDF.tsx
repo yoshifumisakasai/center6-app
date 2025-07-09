@@ -140,7 +140,7 @@ const PDF = (props: any) => {
   console.log('props内容は', props.front_language1);
 
   const isFirstRender = useRef(true);
-  const countRef = useRef([]);
+  let countRef = useRef([]);
   // const [front_language1, setLanguage1] = useState([]);
 
   //  useEffectの依存配列を適切に設定する:
@@ -207,7 +207,7 @@ const PDF = (props: any) => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-            {param_d.map((content: any, index: any) => (
+            {countRef.current.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
