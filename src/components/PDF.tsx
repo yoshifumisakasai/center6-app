@@ -171,6 +171,7 @@ const PDF = (props: any) => {
 
   return (
     <Document>
+      {countRef.current}
       <Page size="A4" style={styles.page}>
         <View>
           <Text style={styles.header}>領収書</Text>
