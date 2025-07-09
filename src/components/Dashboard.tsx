@@ -25,7 +25,7 @@ import Firebase_db_level2 from "./Firebase_db_level2";
 import Firebase_db_level3 from "./Firebase_db_level3";
 import Firebase_db_level1 from "./Firebase_db_level1";
 import { DocumentData } from "firebase/firestore";
-const Dashboard: FC = () => {
+const Dashboard: FC =  (props: any) => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
