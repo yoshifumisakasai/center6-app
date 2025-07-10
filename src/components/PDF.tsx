@@ -162,7 +162,7 @@ const PDF = (props: any) => {
       if (documentSnapshot.exists()) {
         // increment(documentSnapshot.get('content'))
         // setLanguage1(documentSnapshot.get('content'))
-        countRef.current = documentSnapshot.get('content');
+        setLanguage1(documentSnapshot.get('content'));
         console.log('countRefの中身は', countRef.current);
       }
     });
@@ -173,11 +173,11 @@ const PDF = (props: any) => {
     <Document>
 
       <Page size="A4" style={styles.page}>
-        
-       
-     {front_language1.map((item) => {
-            return <li>{item}</li>;
-          })}
+
+
+        {front_language1.map((item) => {
+          return <li>{item}</li>;
+        })}
       </Page>
     </Document>
   );
