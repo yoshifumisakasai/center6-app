@@ -20,3 +20,4 @@ const MemoizedPDFViewer = React.memo(({ PDF }: any) => {
     </div>
   );
 });
+export default MemoizedPDFViewer;

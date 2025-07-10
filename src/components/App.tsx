@@ -23,10 +23,11 @@ import FrontEnd from "./FrontEnd";
 import CSS_library from "./CSS_library";
 import Hook from "./Hook";
 import State from "./State";
-import PdfViewer from "./PdfViewer";
+import PdfViewer from "./MemoizedPDFViewer";
 import Kanri_Dashboard from "./Kanri_Dashboard";
 import Kanri_FrontEnd from "./Kanri_FrontEnd";
 import Kanri_Skill_Check from "./Kanri_Skill_Check";
+import MemoizedPDFViewer from "./MemoizedPDFViewer";
 const App: FC = () => {
     return (
         <ChakraProvider theme={theme}>
@@ -53,7 +54,7 @@ const App: FC = () => {
                                     <Route path="/css_library/" element={<CSS_library />} />
                                     <Route path="/management/" element={<Management />} />
                                     <Route path={`/frontEndResult/`} element={<FrontEndResult />} />
-                                    <Route path={`/viewPdf/`} element={<PdfViewer />} />
+                                    <Route path={`/viewPdf/`} element={<MemoizedPDFViewer />} />
 
                                 </Routes>
                             </Box>
