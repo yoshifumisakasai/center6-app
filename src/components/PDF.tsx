@@ -135,12 +135,12 @@ const data = [
 
 const PDF = (props: any) => {
 
-  const param_d = props.front_language1;
-  console.log('props内容は', props);
-  console.log('props内容は', props.front_language1);
+  // const param_d = props.front_language1;
+  // console.log('props内容は', props);
+  // console.log('props内容は', props.front_language1);
 
-  const isFirstRender = useRef(true);
-  let countRef = useRef([]);
+  // const isFirstRender = useRef(true);
+  // let countRef = useRef([]);
   const [front_language1, setLanguage1] = useState([]);
 
   //  useEffectの依存配列を適切に設定する:
@@ -163,14 +163,14 @@ const PDF = (props: any) => {
         // increment(documentSnapshot.get('content'))
         // setLanguage1(documentSnapshot.get('content'))
         setLanguage1(documentSnapshot.get('content'));
-        console.log('countRefの中身は', countRef.current);
+        // console.log('countRefの中身は', countRef.current);
       }
     });
 
   }, [])
 
   return (
-   <Document>
+    <Document>
       <Page size="A4" style={styles.page}>
         <View>
           <Text style={styles.header}>領収書</Text>
