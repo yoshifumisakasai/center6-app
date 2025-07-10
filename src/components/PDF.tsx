@@ -141,7 +141,7 @@ const PDF = (props: any) => {
 
   const isFirstRender = useRef(true);
   let countRef = useRef([]);
-  // const [front_language1, setLanguage1] = useState([]);
+  const [front_language1, setLanguage1] = useState([]);
 
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
@@ -175,7 +175,7 @@ const PDF = (props: any) => {
       <Page size="A4" style={styles.page}>
         
        
-     {countRef.current.map((item) => {
+     {front_language1.map((item) => {
             return <li>{item}</li>;
           })}
       </Page>
