@@ -39,21 +39,21 @@ import { db } from "./FirebaseConfig";
 
 const FrontEndResult = () => {
     const isFirstRender = useRef(true);
-          const [front_language1, setLanguage1] = useState([]);
+    const [front_language1, setLanguage1] = useState([]);
 
-      useEffect(() => {
-    
+    useEffect(() => {
+
 
         const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
-          if (documentSnapshot.exists()) {
-            setLanguage1(documentSnapshot.get('content'))
-          }
+            if (documentSnapshot.exists()) {
+                setLanguage1(documentSnapshot.get('content'))
+            }
         });
-    
-      }, [])
-    const [instance, updateInstance] = usePDF({ document: <PDF  front_language1={front_language1}/> });
+
+    }, [])
+    const [instance, updateInstance] = usePDF({ document: <PDF front_language1={front_language1} /> });
     const { url, loading } = instance;
 
     //String型へ型変換
@@ -106,10 +106,10 @@ const FrontEndResult = () => {
     //useMemoで計算結果をメモ化する:
     //useMemoを使うことで、依存関係が変わらない限り、同じ計算を何度も実行することを防ぎ、再レンダリングの負荷を軽減できます。
     const pdfComponent = useMemo(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
+        }
 
 
         console.log('基礎レベル（レベル1）', location.state.level1);
@@ -152,17 +152,17 @@ const FrontEndResult = () => {
         // 再レンダリングを抑制するには、usePDFフックの値を参照するコンポーネントの再レンダリングを最適化
         // usePDFフック自体が再レンダリングを引き起こすのではなく、
         // フックが返す値（例えば、urlやloading状態など）が変更された場合に、それを参照しているコンポーネントが再レンダリングされます。
-        const [instance, updateInstance] = usePDF({ document: <PDF /> });
-        const { url, loading } = instance;
-        const pdfComponent = useMemo(() => {
-            return (
-                <div>
-                    {loading ? <p>Loading...</p> : <p>Loaded</p>}
-                </div>
-            )
-        }, [url, loading])
-        console.log('インスタンス', instance);
-        console.log('URL', instance.url);
+        // const [instance, updateInstance] = usePDF({ document: <PDF /> });
+        // const { url, loading } = instance;
+        // const pdfComponent = useMemo(() => {
+        //     return (
+        //         <div>
+        //             {loading ? <p>Loading...</p> : <p>Loaded</p>}
+        //         </div>
+        //     )
+        // }, [url, loading])
+        // console.log('インスタンス', instance);
+        // console.log('URL', instance.url);
         //「instance.url」データ型：ReactPDF.UsePDFInstance.url: string | null
         //string | null 型を、string | undefined型に代入しようとしているのでエラー
 
