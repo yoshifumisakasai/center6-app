@@ -1,13 +1,13 @@
 "use client";
 
-import React, { FC } from "react";
+import React from "react";
 import PDF from "./PDF";
 import { PDFViewer } from "@react-pdf/renderer";
 
 
 
 // PDFをPDFViewerというコンポーネントを利用してレンダリング
-const MemoizedPDFViewer: FC = () => {
+const MemoizedPDFViewer = React.memo(({ PDF }: any) => {
   return (
     <div
       style={{
@@ -19,5 +19,5 @@ const MemoizedPDFViewer: FC = () => {
       </PDFViewer>
     </div>
   );
-};
+});
 export default MemoizedPDFViewer;
