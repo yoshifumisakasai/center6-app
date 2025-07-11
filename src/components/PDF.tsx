@@ -133,7 +133,7 @@ const data = [
   },
 ];
 
-const PDF = useMemo(() => {
+const PDF = () => {
 
   // const param_d = props.front_language1;
   // console.log('props内容(1)は', props);
@@ -221,5 +221,5 @@ const PDF = useMemo(() => {
       </Page>
     </Document>
   );
-},[]);
+};
 export default PDF;
