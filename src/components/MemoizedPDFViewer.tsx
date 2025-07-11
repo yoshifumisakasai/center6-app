@@ -15,7 +15,7 @@ const MemoizedPDFViewer = React.memo(({ PDF }: any) => {
       }}
     >
       <PDFViewer width="100%" height="100%">
-        {PDF}
+        <PDF/>
       </PDFViewer>
     </div>
   );
