@@ -167,7 +167,7 @@ const PDF: FC = () => {
       }
     });
     return front_language1;
-  }, [front_language1]); // count が変更された時だけ再計算
+  }, []); // count が変更された時だけ再計算
 
   return (
     <Document>
