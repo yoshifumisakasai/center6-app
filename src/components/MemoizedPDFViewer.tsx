@@ -7,8 +7,8 @@ import { PDFViewer } from "@react-pdf/renderer";
 
 
 // PDFをPDFViewerというコンポーネントを利用してレンダリング
-const MemoizedPDFViewer: FC = React.memo(({  }) => {
-    return (
+const MemoizedPDFViewer: FC = React.memo(() => {
+  return (
     <div
       style={{
         height: "100vh",
