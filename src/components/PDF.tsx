@@ -4,6 +4,7 @@ import notoBold from '../fonts/NotoSansJP-Bold.ttf'
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
+import React from "react";
 
 //React-pdfが提供するコンポーネントやAPIを利用してPDFのスタイルを定義
 Font.register({
@@ -222,4 +223,4 @@ const PDF = () => {
     </Document>
   );
 };
-export default PDF;
+export default React.memo(PDF);
