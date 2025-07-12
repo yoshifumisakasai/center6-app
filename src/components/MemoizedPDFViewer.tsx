@@ -21,6 +21,7 @@ import { db } from "./FirebaseConfig";
 // });
 // PDFをPDFViewerというコンポーネントを利用してレンダリング
 const MemoizedPDFViewer: FC = () => {
+  console.log('MemorizedPDFViewerコンポ実行')
   return (
     <div
       style={{
