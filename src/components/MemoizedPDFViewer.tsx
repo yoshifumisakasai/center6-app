@@ -20,7 +20,7 @@ import { db } from "./FirebaseConfig";
 //   })
 // });
 // PDFをPDFViewerというコンポーネントを利用してレンダリング
-const MemoizedPDFViewer: FC = React.memo(() => {
+const MemoizedPDFViewer: FC = () => {
   return (
     <div
       style={{
@@ -32,5 +32,5 @@ const MemoizedPDFViewer: FC = React.memo(() => {
       </PDFViewer>
     </div>
   );
-});
+};
 export default React.memo(MemoizedPDFViewer);
