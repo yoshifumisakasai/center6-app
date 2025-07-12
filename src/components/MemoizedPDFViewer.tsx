@@ -6,10 +6,12 @@ import { PDFViewer } from "@react-pdf/renderer";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
-const [front_language1, setLanguage1] = useState([]);
 
 // PDFをPDFViewerというコンポーネントを利用してレンダリング
+
 const MemoizedPDFViewer: FC = () => {
+  const [front_language1, setLanguage1] = useState([]);
+
   useEffect(() => {
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
