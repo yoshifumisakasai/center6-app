@@ -20,7 +20,7 @@ const MemoizedPDFViewer: FC = () => {
         setLanguage1(documentSnapshot.get('content'));
       }
     })
-  });
+  },[]);
   console.log('MemorizedPDFViewerコンポ実行')
   return (
     <div
