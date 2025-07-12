@@ -168,7 +168,7 @@ const PDF:FC = () => {
       }
     });
 
-  }, [])
+  }, [front_language1])
 
   return (
     <Document>
