@@ -6,21 +6,21 @@ import { PDFViewer } from "@react-pdf/renderer";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
-const [front_language1, setLanguage1] = useState([]);
-useEffect(() => {
-  const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+// const [front_language1, setLanguage1] = useState([]);
+// useEffect(() => {
+//   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
-  getDoc(usersCollectionRef1).then((documentSnapshot) => {
-    if (documentSnapshot.exists()) {
-      // increment(documentSnapshot.get('content'))
-      // setLanguage1(documentSnapshot.get('content'))
-      setLanguage1(documentSnapshot.get('content'));
-      // console.log('countRefの中身は', countRef.current);
-    }
-  })
-});
+//   getDoc(usersCollectionRef1).then((documentSnapshot) => {
+//     if (documentSnapshot.exists()) {
+//       // increment(documentSnapshot.get('content'))
+//       // setLanguage1(documentSnapshot.get('content'))
+//       setLanguage1(documentSnapshot.get('content'));
+//       // console.log('countRefの中身は', countRef.current);
+//     }
+//   })
+// });
 // PDFをPDFViewerというコンポーネントを利用してレンダリング
-const MemoizedPDFViewer: FC = React.memo((front_language1) => {
+const MemoizedPDFViewer: FC = React.memo(() => {
   return (
     <div
       style={{
@@ -33,4 +33,4 @@ const MemoizedPDFViewer: FC = React.memo((front_language1) => {
     </div>
   );
 });
-export default MemoizedPDFViewer;
+export default React.memo(MemoizedPDFViewer);
