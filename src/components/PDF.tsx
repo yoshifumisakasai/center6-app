@@ -156,7 +156,7 @@ const PDF: FC = () => {
     //   setLanguage1(x)
     // }, [])
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-
+  useEffect(() => {
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
       if (documentSnapshot.exists()) {
         // increment(documentSnapshot.get('content'))
@@ -165,7 +165,7 @@ const PDF: FC = () => {
         // console.log('countRefの中身は', countRef.current);
       }
     });
-
+}, []);
   return (
     <Document>
       <Page size="A4" style={styles.page}>
