@@ -134,7 +134,7 @@ const data = [
   },
 ];
 
-const PDF:FC = () => {
+const PDF: FC = () => {
 
   // const param_d = props.front_language1;
   console.log('PDFコンポーネント実行');
@@ -146,7 +146,7 @@ const PDF:FC = () => {
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
   //これにより、不要な再レンダリングを抑制できます。﻿
-  useEffect(() => {
+  const expensiveValue = useMemo(() => {
 
     // 初回レンダリング時にuseEffectを実行しないようにする方法
     // if (isFirstRender.current) {
@@ -166,8 +166,8 @@ const PDF:FC = () => {
         // console.log('countRefの中身は', countRef.current);
       }
     });
-
-  }, [])
+    return front_language1;
+  }, [front_language1]); // count が変更された時だけ再計算
 
   return (
     <Document>
@@ -207,7 +207,7 @@ const PDF:FC = () => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-            {front_language1.map((content: any, index: any) => (
+            {data.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
