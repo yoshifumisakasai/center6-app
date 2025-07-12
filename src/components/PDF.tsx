@@ -1,7 +1,7 @@
 import { Font, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 import notoRegular from '../fonts/NotoSansJP-Regular.ttf';
 import notoBold from '../fonts/NotoSansJP-Bold.ttf'
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 import React from "react";
@@ -134,7 +134,7 @@ const data = [
   },
 ];
 
-const PDF = () => {
+const PDF:FC = () => {
 
   // const param_d = props.front_language1;
   console.log('props内容(1)は');
