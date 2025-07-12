@@ -137,8 +137,7 @@ const data = [
 const PDF:FC = () => {
 
   // const param_d = props.front_language1;
-  console.log('props内容(1)は');
-  console.log('props内容(2)は');
+  console.log('PDFコンポーネント実行');
 
   // const isFirstRender = useRef(true);
   // let countRef = useRef([]);
