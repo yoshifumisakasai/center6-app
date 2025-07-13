@@ -134,7 +134,7 @@ const data = [
   },
 ];
 
-const PDF: FC = () => {
+const PDF= () => {
 
   // const param_d = props.front_language1;
   console.log('PDFコンポーネント実行');
@@ -219,4 +219,4 @@ const PDF: FC = () => {
     </Document>
   );
 };
-export default React.memo(PDF);
+export default PDF;
