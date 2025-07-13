@@ -134,7 +134,7 @@ const data = [
   },
 ];
 
-const PDF= () => {
+const PDF: FC = () => {
 
   // const param_d = props.front_language1;
   console.log('PDFコンポーネント実行');
@@ -204,7 +204,7 @@ const PDF= () => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-            {data.map((content: any, index: any) => (
+            {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
@@ -219,4 +219,4 @@ const PDF= () => {
     </Document>
   );
 };
-export default PDF;
+export default React.memo(PDF);
