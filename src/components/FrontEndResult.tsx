@@ -36,6 +36,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
+const memoPDF = React.memo(PDF);
 
 const FrontEndResult = () => {
     const isFirstRender = useRef(true);
