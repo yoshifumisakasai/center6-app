@@ -28,7 +28,10 @@ import Kanri_Dashboard from "./Kanri_Dashboard";
 import Kanri_FrontEnd from "./Kanri_FrontEnd";
 import Kanri_Skill_Check from "./Kanri_Skill_Check";
 import MemoizedPDFViewer from "./MemoizedPDFViewer";
+import React from "react";
 const App: FC = () => {
+    const MemoPDFViewer = React.memo(MemoizedPDFViewer);
+    
     return (
         <ChakraProvider theme={theme}>
             <Flex w="100vw" h="100wh">
@@ -54,7 +57,7 @@ const App: FC = () => {
                                     <Route path="/css_library/" element={<CSS_library />} />
                                     <Route path="/management/" element={<Management />} />
                                     <Route path={`/frontEndResult/`} element={<FrontEndResult />} />
-                                    <Route path={`/viewPdf/`} element={<MemoizedPDFViewer />} />
+                                    <Route path={`/viewPdf/`} element={<MemoPDFViewer />} />
 
                                 </Routes>
                             </Box>
