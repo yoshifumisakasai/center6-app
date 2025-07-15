@@ -36,7 +36,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
-const memoPDF = React.memo(PDF);
+const MemoPDF = React.memo(PDF);
 
 const FrontEndResult = () => {
     const isFirstRender = useRef(true);
@@ -54,7 +54,7 @@ const FrontEndResult = () => {
     //     });
 
     // }, [])
-    const [instance, updateInstance] = usePDF({ document: <PDF /> });
+    const [instance, updateInstance] = usePDF({ document: <MemoPDF /> });
     const { url, loading } = instance;
 
     //String型へ型変換
