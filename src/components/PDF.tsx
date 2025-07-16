@@ -141,7 +141,7 @@ const PDF: FC = () => {
 
   // const isFirstRender = useRef(true);
   // let countRef = useRef([]);
-  const [front_language1, setLanguage1] = useState([]);
+  // const [front_language1, setLanguage1] = useState([]);
 
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
@@ -155,17 +155,17 @@ const PDF: FC = () => {
     // const increment = useCallback((x: any) => {
     //   setLanguage1(x)
     // }, [])
-    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  useEffect(() => {
-    getDoc(usersCollectionRef1).then((documentSnapshot) => {
-      if (documentSnapshot.exists()) {
-        // increment(documentSnapshot.get('content'))
-        // setLanguage1(documentSnapshot.get('content'))
-        setLanguage1(documentSnapshot.get('content'));
-        // console.log('countRefの中身は', countRef.current);
-      }
-    });
-}, []);
+//     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+//   useEffect(() => {
+//     getDoc(usersCollectionRef1).then((documentSnapshot) => {
+//       if (documentSnapshot.exists()) {
+//         // increment(documentSnapshot.get('content'))
+//         // setLanguage1(documentSnapshot.get('content'))
+//         setLanguage1(documentSnapshot.get('content'));
+//         // console.log('countRefの中身は', countRef.current);
+//       }
+//     });
+// }, []);
   return (
     <Document>
       <Page size="A4" style={styles.page}>
