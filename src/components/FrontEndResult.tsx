@@ -54,11 +54,11 @@ const FrontEndResult = () => {
     //     });
 
     // }, [])
-    const [instance, updateInstance] = usePDF({ document: <MemoPDF /> });
-    const { url, loading } = instance;
+    // const [instance, updateInstance] = usePDF({ document: <MemoPDF /> });
+    // const { url, loading } = instance;
 
     //String型へ型変換
-    const url_j = instance.url as string;
+    // const url_j = instance.url as string;
 
     const location = useLocation();
     let navigate = useNavigate();
@@ -218,7 +218,6 @@ const FrontEndResult = () => {
                             <Button colorScheme="yellow" size="sm" variant="outline" leftIcon={<AddIcon />} onClick={() => viewPdf('dummy')}>PDF表示</Button>
 
                             <Button colorScheme="blue" size="sm" variant="outline" leftIcon={<AddIcon />}>
-                                <Link href={url_j} download="test.pdf">PDFダウンロード</Link>
                             </Button>
 
 
