@@ -200,9 +200,9 @@ const PDF: FC = () => {
                     */}
               <Text style={styles.tableColHeader}>大項目</Text>
               <Text style={styles.tableColHeader}>中項目</Text>
-              <Text style={styles.tableColHeader}>単位</Text>
+              <Text style={styles.tableColHeader}>{shouldScrollToTop.current}</Text>
               <Text style={styles.tableColHeader}>単価</Text>
-              <Text style={styles.tableColHeader}>金額</Text>
+              <Text style={styles.tableColHeader}>{shouldScrollToTop.current}</Text>
             </View>
               <Text style={styles.tableCol}>{shouldScrollToTop.current}</Text>
           
