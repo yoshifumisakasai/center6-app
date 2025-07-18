@@ -204,11 +204,15 @@ const PDF: FC = () => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>{shouldScrollToTop.current}</Text>
             </View>
-              <p>{shouldScrollToTop.current}</p>
-          <p>{shouldScrollToTop.current}</p>
-          <p>{shouldScrollToTop.current}</p>
-          <p>{shouldScrollToTop.current}</p>
-          <p>{shouldScrollToTop.current}</p>
+            {shouldScrollToTop.current.map((content: any, index: any) => (
+              <View style={styles.tableRow} key={index}>
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
+                <Text style={styles.tableCol}>{content}</Text>
+              </View>
+            ))}
           </View>
         </View>
       </Page>
