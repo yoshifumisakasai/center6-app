@@ -204,8 +204,11 @@ const PDF: FC = () => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>{shouldScrollToTop.current}</Text>
             </View>
-              <Text style={styles.tableCol}>{shouldScrollToTop.current}</Text>
-          
+              <p>{shouldScrollToTop.current}</p>
+          <p>{shouldScrollToTop.current}</p>
+          <p>{shouldScrollToTop.current}</p>
+          <p>{shouldScrollToTop.current}</p>
+          <p>{shouldScrollToTop.current}</p>
           </View>
         </View>
       </Page>
