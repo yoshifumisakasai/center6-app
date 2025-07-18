@@ -204,9 +204,9 @@ const PDF: FC = () => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>金額</Text>
             </View>
-      {shouldScrollToTop.current.map(item => (
-        <li key={item}>{item}</li>
-      ))}
+            {shouldScrollToTop.current.map((content: any) => (
+              <Text style={styles.tableCol}>{content}</Text>
+            ))}
           </View>
         </View>
       </Page>
