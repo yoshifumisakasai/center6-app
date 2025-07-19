@@ -121,22 +121,22 @@ const FrontEndResult = () => {
         // }
 
 
-        console.log('基礎レベル（レベル1）', location.state.level1);
-        console.log('現場レベル（レベル2）', location.state.level2);
-        console.log('応用レベル（レベル3）', location.state.level3);
+        // console.log('基礎レベル（レベル1）', location.state.level1);
+        // console.log('現場レベル（レベル2）', location.state.level2);
+        // console.log('応用レベル（レベル3）', location.state.level3);
 
         //4,3,2,1だったら、[4,3,2,1]の文字数：11
         //3,1,2だったら、[3,1,2]：7
         //1,2だったら、
-        console.log("レベル１：" + Object.keys(level1_Array).length);
-        console.log("レベル２：" + Object.keys(level2_Array).length);
-        console.log("レベル３：" + Object.keys(level3_Array).length);
+        // console.log("レベル１：" + Object.keys(level1_Array).length);
+        // console.log("レベル２：" + Object.keys(level2_Array).length);
+        // console.log("レベル３：" + Object.keys(level3_Array).length);
 
 
 
         const level1_Array_content = [...level1_Array];
-        console.log('内容です1', level1_Array)
-        console.log('内容です2', level1_Array_content)
+        // console.log('内容です1', level1_Array)
+        // console.log('内容です2', level1_Array_content)
 
 
         interface OnRenderProps {
