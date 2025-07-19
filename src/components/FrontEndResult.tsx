@@ -38,7 +38,7 @@ import { db } from "./FirebaseConfig";
 
 const MemoPDF = React.memo(PDF);
 const FrontEndResult = () => {
-    
+
 
     // const [front_language1, setLanguage1] = useState([]);
 
@@ -69,10 +69,12 @@ const FrontEndResult = () => {
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
         front_language1 = documentSnapshot.get('content');
-        return front_language1;
         // if (documentSnapshot.exists()) {
         //     front_language1 = documentSnapshot.get('content');
-        //     console.log('[内側]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
+        console.log('[内側]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
+        console.log('data値', documentSnapshot.data);
+        return front_language1;
+
         // }
     });
     console.log('shouldScrollToTop([外側]FrontEndResultコンポーネント）', front_language1);
@@ -194,7 +196,7 @@ const FrontEndResult = () => {
 
         <>
             {front_language1.map((item) => {
-                 <li>{item}</li>;
+                <li>{item}</li>;
             })}
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh">
