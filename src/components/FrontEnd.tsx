@@ -24,20 +24,20 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 const FrontEnd: FC = () => {
 
-    const [front_language1, setLanguage1] = useState([]);
+    // const [front_language1, setLanguage1] = useState([]);
 
-    useEffect(() => {
+    // useEffect(() => {
 
 
-        const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+    //     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
-        getDoc(usersCollectionRef1).then((documentSnapshot) => {
-            if (documentSnapshot.exists()) {
-                setLanguage1(documentSnapshot.get('content'))
-            }
-        });
+    //     getDoc(usersCollectionRef1).then((documentSnapshot) => {
+    //         if (documentSnapshot.exists()) {
+    //             setLanguage1(documentSnapshot.get('content'))
+    //         }
+    //     });
 
-    }, [])
+    // }, [])
     return (
         <ChakraProvider theme={theme}>
             <Flex w="100vw" h="100wh">
