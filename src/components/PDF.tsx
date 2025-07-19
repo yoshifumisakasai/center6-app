@@ -162,7 +162,7 @@ const PDF: FC = () => {
       // increment(documentSnapshot.get('content'))
       // setLanguage1(documentSnapshot.get('content'))
       front_language1 = documentSnapshot.get('content');
-      console.log('shouldScrollToTop', shouldScrollToTop.current);
+      console.log('shouldScrollToTop', front_language1);
     }
   });
   // }, []);
