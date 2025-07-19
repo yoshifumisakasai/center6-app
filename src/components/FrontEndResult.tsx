@@ -37,9 +37,9 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
 const MemoPDF = React.memo(PDF);
-
+let front_language1: string[] = []
 const FrontEndResult = () => {
-    let front_language1: string[] = []
+    
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
         if (documentSnapshot.exists()) {
