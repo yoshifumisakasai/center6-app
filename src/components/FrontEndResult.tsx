@@ -39,7 +39,14 @@ import { db } from "./FirebaseConfig";
 const MemoPDF = React.memo(PDF);
 
 const FrontEndResult = () => {
-    const isFirstRender = useRef(true);
+    let front_language1: string[] = []
+    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+    getDoc(usersCollectionRef1).then((documentSnapshot) => {
+        if (documentSnapshot.exists()) {
+            front_language1 = documentSnapshot.get('content');
+            console.log('shouldScrollToTop', front_language1);
+        }
+    });
     // const [front_language1, setLanguage1] = useState([]);
 
     // useEffect(() => {
@@ -107,10 +114,10 @@ const FrontEndResult = () => {
     //useMemoで計算結果をメモ化する:
     //useMemoを使うことで、依存関係が変わらない限り、同じ計算を何度も実行することを防ぎ、再レンダリングの負荷を軽減できます。
     const pdfComponent = useMemo(() => {
-        if (isFirstRender.current) {
-            isFirstRender.current = false;
-            return;
-        }
+        // if (isFirstRender.current) {
+        //     isFirstRender.current = false;
+        //     return;
+        // }
 
 
         console.log('基礎レベル（レベル1）', location.state.level1);
@@ -183,6 +190,9 @@ const FrontEndResult = () => {
     return (
 
         <>
+            {front_language1.map((item) => {
+                return <li>{item}</li>;
+            })}
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh">
                     <SideMenu_top />
