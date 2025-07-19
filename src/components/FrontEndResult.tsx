@@ -68,10 +68,11 @@ const FrontEndResult = () => {
     var front_language1: string[] = []
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
-        if (documentSnapshot.exists()) {
-            front_language1 = documentSnapshot.get('content');
-            console.log('[内側]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
-        }
+        front_language1 = documentSnapshot.get('content');
+        // if (documentSnapshot.exists()) {
+        //     front_language1 = documentSnapshot.get('content');
+        //     console.log('[内側]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
+        // }
     });
     console.log('shouldScrollToTop([外側]FrontEndResultコンポーネント）', front_language1);
     const lv1 = Object.keys(level1_Array).length;
