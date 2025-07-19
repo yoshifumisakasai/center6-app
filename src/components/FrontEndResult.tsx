@@ -44,7 +44,7 @@ const FrontEndResult = () => {
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
         if (documentSnapshot.exists()) {
             front_language1 = documentSnapshot.get('content');
-            console.log('shouldScrollToTop', front_language1);
+            console.log('shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
         }
     });
     // const [front_language1, setLanguage1] = useState([]);
