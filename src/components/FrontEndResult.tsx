@@ -37,16 +37,9 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
 
 const MemoPDF = React.memo(PDF);
-let front_language1: string[] = []
 const FrontEndResult = () => {
     
-    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-    getDoc(usersCollectionRef1).then((documentSnapshot) => {
-        if (documentSnapshot.exists()) {
-            front_language1 = documentSnapshot.get('content');
-            console.log('shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
-        }
-    });
+
     // const [front_language1, setLanguage1] = useState([]);
 
     // useEffect(() => {
@@ -72,7 +65,14 @@ const FrontEndResult = () => {
     const level1_Array: string[] = location.state.level1;
     const level2_Array: string[] = location.state.level2;
     const level3_Array: string[] = location.state.level3;
-
+    let front_language1: string[] = []
+    const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+    getDoc(usersCollectionRef1).then((documentSnapshot) => {
+        if (documentSnapshot.exists()) {
+            front_language1 = documentSnapshot.get('content');
+            console.log('shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
+        }
+    });
     const lv1 = Object.keys(level1_Array).length;
     const lv2 = Object.keys(level2_Array).length;
     const lv3 = Object.keys(level3_Array).length;
