@@ -191,7 +191,7 @@ const FrontEndResult = () => {
 
         <>
             {front_language1.map((item) => {
-                return <li>{item}</li>;
+                 <li>{item}</li>;
             })}
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh">
