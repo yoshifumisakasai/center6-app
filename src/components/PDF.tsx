@@ -141,7 +141,7 @@ const PDF: FC = () => {
 
   // const isFirstRender = useRef(true);
   // let countRef = useRef([]);
-  const [front_language1, setLanguage1] = useState([]);
+  let front_language1: string[] = []
   const shouldScrollToTop = useRef([]);
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
@@ -161,7 +161,7 @@ const PDF: FC = () => {
     if (documentSnapshot.exists()) {
       // increment(documentSnapshot.get('content'))
       // setLanguage1(documentSnapshot.get('content'))
-      shouldScrollToTop.current = documentSnapshot.get('content');
+      front_language1 = documentSnapshot.get('content');
       console.log('shouldScrollToTop', shouldScrollToTop.current);
     }
   });
@@ -204,7 +204,7 @@ const PDF: FC = () => {
               <Text style={styles.tableColHeader}>単価</Text>
               <Text style={styles.tableColHeader}>{shouldScrollToTop.current}</Text>
             </View>
-            {shouldScrollToTop.current.map((content: any, index: any) => (
+            {front_language1.map((content: any, index: any) => (
               <View style={styles.tableRow} key={index}>
                 <Text style={styles.tableCol}>{content}</Text>
                 <Text style={styles.tableCol}>{content}</Text>
