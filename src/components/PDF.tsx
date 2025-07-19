@@ -141,7 +141,7 @@ const PDF: FC = () => {
 
   // const isFirstRender = useRef(true);
   // let countRef = useRef([]);
-  // const [front_language1, setLanguage1] = useState([]);
+  const [front_language1, setLanguage1] = useState([]);
   const shouldScrollToTop = useRef([]);
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
