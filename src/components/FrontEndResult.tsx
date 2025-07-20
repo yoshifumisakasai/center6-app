@@ -66,10 +66,11 @@ const FrontEndResult = () => {
     const level2_Array: string[] = location.state.level2;
     const level3_Array: string[] = location.state.level3;
     // let front_language1: string[] = []
+      let shouldScrollToTop = useRef([]);
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
     
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
-        // setLanguage1(documentSnapshot.get('content'));
+        shouldScrollToTop = documentSnapshot.get('content');
         // if (documentSnapshot.exists()) {
         //     front_language1 = documentSnapshot.get('content');
         console.log('[内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
@@ -78,7 +79,7 @@ const FrontEndResult = () => {
 
         // }
     });
-    console.log('shouldScrollToTop([外側]FrontEndResultコンポーネント）', front_language1);
+    console.log('shouldScrollToTop([外側]FrontEndResultコンポーネント）', shouldScrollToTop);
     const lv1 = Object.keys(level1_Array).length;
     const lv2 = Object.keys(level2_Array).length;
     const lv3 = Object.keys(level3_Array).length;
