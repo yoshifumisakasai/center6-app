@@ -69,7 +69,7 @@ const FrontEndResult = () => {
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
     
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
-        setLanguage1(documentSnapshot.get('content'));
+        // setLanguage1(documentSnapshot.get('content'));
         // if (documentSnapshot.exists()) {
         //     front_language1 = documentSnapshot.get('content');
         console.log('[内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
