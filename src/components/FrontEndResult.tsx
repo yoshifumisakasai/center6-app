@@ -74,7 +74,6 @@ const FrontEndResult = () => {
         console.log('[内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
         console.log('[内側2]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
         console.log('data値', documentSnapshot.data);
-        return front_language1;
 
         // }
     });
