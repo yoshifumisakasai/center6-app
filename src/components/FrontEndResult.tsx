@@ -57,6 +57,7 @@ const FrontEndResult = () => {
                 setLanguage1(documentSnapshot.get('content'))
             }
         });
+        console.log('shouldScrollToTop([再レンダリングなし]]FrontEndResultコンポーネント）', front_language1);
 
     }, [])
     // const [instance, updateInstance] = usePDF({ document: <MemoPDF /> });
@@ -85,7 +86,6 @@ const FrontEndResult = () => {
     // }
     // });
     // console.log('shouldScrollToTop([外側<1>]FrontEndResultコンポーネント）', shouldScrollToTop.current);
-    console.log('shouldScrollToTop([外側<2>]FrontEndResultコンポーネント）', front_language1);
 
     const lv1 = Object.keys(level1_Array).length;
     const lv2 = Object.keys(level2_Array).length;
