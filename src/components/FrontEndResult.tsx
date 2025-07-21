@@ -42,7 +42,7 @@ const FrontEndResult = () => {
 
 
     const [front_language1, setLanguage1] = useState([]);
-    let shouldScrollToTop = useRef([]);
+    // let shouldScrollToTop = useRef([]);
 
     // useEffect(() => {
 
@@ -71,17 +71,17 @@ const FrontEndResult = () => {
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
-        shouldScrollToTop.current = documentSnapshot.get('content');
+        // shouldScrollToTop.current = documentSnapshot.get('content');
         // console.log('getDoc内', shouldScrollToTop.current);
         // if (documentSnapshot.exists()) {
-        // setLanguage1(documentSnapshot.get('content'));
+        setLanguage1(documentSnapshot.get('content'));
         // console.log('[getDoc内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
         // console.log('[getDoc内側2]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
         // console.log('getDocのdata値', documentSnapshot.data);
 
         // }
     });
-    console.log('shouldScrollToTop([外側<1>]FrontEndResultコンポーネント）', shouldScrollToTop.current);
+    // console.log('shouldScrollToTop([外側<1>]FrontEndResultコンポーネント）', shouldScrollToTop.current);
     console.log('shouldScrollToTop([外側<2>]FrontEndResultコンポーネント）', front_language1);
 
     const lv1 = Object.keys(level1_Array).length;
@@ -242,7 +242,7 @@ const FrontEndResult = () => {
                         ))}
                         <br />
                         <Text bg='rgb(75, 192, 192)'>test<b>[{level3_Array.length}]</b>ポイント</Text>
-                        {shouldScrollToTop.current.map((content: any, index: any) => (
+                        {front_language1.map((content: any, index: any) => (
                             <Flex direction="column">
                                 {content}
                             </Flex>
