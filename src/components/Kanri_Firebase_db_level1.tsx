@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { db } from './FirebaseConfig';
 import { addDoc, collection, doc, FieldValue, onSnapshot, setDoc, arrayUnion, updateDoc, getDoc, DocumentData, deleteDoc, getDocs, query, where, arrayRemove, DocumentSnapshot } from 'firebase/firestore';
 import firestore from 'firebase/app';
@@ -169,6 +169,16 @@ function Kanri_Firebase_db_level1() {
 
     };
 
+    const ref = useRef<HTMLInputElement>(null);
+
+    function handleRef() {
+        console.log(ref);
+        console.log("input", ref.current);
+        console.log("value", ref.current?.value);
+        console.log("width", ref.current?.offsetWidth);
+    };
+
+
     useEffect(() => {
 
 
@@ -204,6 +214,8 @@ function Kanri_Firebase_db_level1() {
                     <FormLabel htmlFor='level_1'>level-1</FormLabel>
                     <Input
                         id='level_1' value={input1} onChange={handleInputChange1} width='500px' />
+                    <Input type="text" ref={ref}></Input>
+                    <Button onClick={handleRef}>useRef</Button>
                 </FormControl>
                 <Button
                     type='submit'
@@ -215,7 +227,7 @@ function Kanri_Firebase_db_level1() {
                 </Button>
             </form>
             {/* 再レンダリング */}
-       
+
             {/* 
             {front_language1.map((content: any, index: any) => (
                 <p>{content}</p>
