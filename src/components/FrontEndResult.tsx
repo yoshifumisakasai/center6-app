@@ -74,9 +74,9 @@ const FrontEndResult = () => {
         console.log('getDoc内', shouldScrollToTop.current);
         // if (documentSnapshot.exists()) {
         setLanguage1(documentSnapshot.get('content'));
-        console.log('[getDoc内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
-        console.log('[getDoc内側2]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
-        console.log('getDocのdata値', documentSnapshot.data);
+        // console.log('[getDoc内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
+        // console.log('[getDoc内側2]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
+        // console.log('getDocのdata値', documentSnapshot.data);
 
         // }
     });
