@@ -71,9 +71,9 @@ const FrontEndResult = () => {
 
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
         shouldScrollToTop.current = documentSnapshot.get('content');
-            console.log('getDoc内', shouldScrollToTop.current);
+        console.log('getDoc内', shouldScrollToTop.current);
         // if (documentSnapshot.exists()) {
-        //     front_language1 = documentSnapshot.get('content');
+        setLanguage1(documentSnapshot.get('content'));
         console.log('[getDoc内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
         console.log('[getDoc内側2]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
         console.log('getDocのdata値', documentSnapshot.data);
@@ -81,6 +81,8 @@ const FrontEndResult = () => {
         // }
     });
     console.log('shouldScrollToTop([外側]FrontEndResultコンポーネント）', shouldScrollToTop.current);
+    console.log('shouldScrollToTop([外側]FrontEndResultコンポーネント）', front_language1);
+
     const lv1 = Object.keys(level1_Array).length;
     const lv2 = Object.keys(level2_Array).length;
     const lv3 = Object.keys(level3_Array).length;
