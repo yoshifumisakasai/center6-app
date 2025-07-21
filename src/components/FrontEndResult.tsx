@@ -44,6 +44,9 @@ const FrontEndResult = () => {
     const [front_language1, setLanguage1] = useState([]);
     // let shouldScrollToTop = useRef([]);
 
+    //useEffect の第二引数 (依存配列) と再レンダリング:
+    //空の配列 ([]):
+    //依存配列が空の場合、useEffect は初回レンダリング時のみ実行されます。
     useEffect(() => {
 
 
