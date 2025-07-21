@@ -141,8 +141,10 @@ const PDF: FC = () => {
 
   // const isFirstRender = useRef(true);
   // let countRef = useRef([]);
-  let front_language1: string[] = []
+  // let front_language1: string[] = []
   const shouldScrollToTop = useRef([]);
+  const [front_language1, setLanguage1] = useState([]);
+
   //  useEffectの依存配列を適切に設定する:
   //useEffectの依存配列に空の配列を渡すことで、コンポーネントのマウント時に一度だけ実行されるように設定できます。﻿
   //これにより、不要な再レンダリングを抑制できます。﻿
@@ -156,17 +158,18 @@ const PDF: FC = () => {
   //   setLanguage1(x)
   // }, [])
   const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
-  // useEffect(() => {
-  getDoc(usersCollectionRef1).then((documentSnapshot) => {
-    if (documentSnapshot.exists()) {
-      // increment(documentSnapshot.get('content'))
-      // setLanguage1(documentSnapshot.get('content'))
-      front_language1 = documentSnapshot.get('content');
-      console.log('shouldScrollToTop(Inner)', front_language1);
-    }
-  });
-  console.log('shouldScrollToTop<Outer>', front_language1);
-  // }, []);
+  useEffect(() => {
+    getDoc(usersCollectionRef1).then((documentSnapshot) => {
+      if (documentSnapshot.exists()) {
+        // increment(documentSnapshot.get('content'))
+        setLanguage1(documentSnapshot.get('content'))
+        // front_language1 = documentSnapshot.get('content');
+        console.log('shouldScrollToTop(Inner)', front_language1);
+      }
+    });
+    console.log('shouldScrollToTop<Outer>', front_language1);
+  }, []);
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
