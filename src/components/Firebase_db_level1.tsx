@@ -26,18 +26,18 @@ const Firebase_db_level1 = (props: any) => {
         //下記値は、インデックス番号
         if (level_1.includes(event.target.value)) {
             set_level_1_Form(level_1.filter((checkedValue: any) => checkedValue !== event.target.value));
-            console.log('[Include]チェックボックスChecked個数', level_1);
+            // console.log('[Include]チェックボックスChecked個数', level_1);
         } else {
             level_1.push(event.target.value);
             set_level_1_Form(level_1);
-            console.log('NO_INCLUDE',event.target.value);
-            console.log('[No_Include]チェックボックスChecked個数', level_1);
+            // console.log('NO_INCLUDE',event.target.value);
+            // console.log('[No_Include]チェックボックスChecked個数', level_1);
 
         }
         // チェックされていたらエラーメッセージが表示されない
 
         props.handleValueChange1(level_1);
-        console.log('Checked個数', level_1);
+        // console.log('Checked個数', level_1);
     };
 
 
