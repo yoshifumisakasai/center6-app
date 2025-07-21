@@ -41,7 +41,7 @@ const MemoPDF = React.memo(PDF);
 const FrontEndResult = () => {
 
 
-    const [front_language1, setLanguage1] = useState([]);
+    // const [front_language1, setLanguage1] = useState([]);
     // let shouldScrollToTop = useRef([]);
 
     // useEffect(() => {
@@ -67,14 +67,14 @@ const FrontEndResult = () => {
     const level1_Array: string[] = location.state.level1;
     const level2_Array: string[] = location.state.level2;
     const level3_Array: string[] = location.state.level3;
-    // let front_language1: string[] = []
+    let front_language1: string[] = []
     const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
 
     getDoc(usersCollectionRef1).then((documentSnapshot) => {
         // shouldScrollToTop.current = documentSnapshot.get('content');
         // console.log('getDoc内', shouldScrollToTop.current);
         // if (documentSnapshot.exists()) {
-        setLanguage1(documentSnapshot.get('content'));
+        front_language1.push(documentSnapshot.get('content'));
         // console.log('[getDoc内側1]shouldScrollToTop(FrontEndResultコンポーネント）', documentSnapshot.get('content'));
         // console.log('[getDoc内側2]shouldScrollToTop(FrontEndResultコンポーネント）', front_language1);
         // console.log('getDocのdata値', documentSnapshot.data);
