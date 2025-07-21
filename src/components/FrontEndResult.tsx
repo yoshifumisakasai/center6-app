@@ -122,12 +122,13 @@ const FrontEndResult = () => {
         navigate("/viewPdf/")
     };
 
-    const ref = useRef(null);
+    const ref = useRef<HTMLInputElement>(null);
 
     function handleRef() {
         console.log(ref);
         console.log("input", ref.current);
-
+        console.log("value", ref.current?.value);
+        console.log("width", ref.current?.offsetWidth);
     };
     //useMemoで計算結果をメモ化する:
     //useMemoを使うことで、依存関係が変わらない限り、同じ計算を何度も実行することを防ぎ、再レンダリングの負荷を軽減できます。
