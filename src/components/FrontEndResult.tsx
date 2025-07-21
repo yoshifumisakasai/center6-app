@@ -244,7 +244,7 @@ const FrontEndResult = () => {
                             </Flex>
                         ))}
                         <br />
-                        <Text bg='rgb(75, 192, 192)'>test<b>[{level3_Array.length}]</b>ポイント</Text>
+                        <Text >test<b>[{level3_Array.length}]</b>ソースコード検証用</Text>
                         {front_language1.map((content: any, index: any) => (
                             <Flex direction="column">
                                 {content}
