@@ -1,6 +1,6 @@
 "use client"
 
-import { Checkbox, Container, Link, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react"
+import { Checkbox, Container, Input, Link, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react"
 import { CheckboxGroup } from "@chakra-ui/react";
 import { TodoTitle } from "./TodoTitle";
 import { Tabs } from "@chakra-ui/react";
@@ -35,6 +35,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./FirebaseConfig";
+import { ref } from "firebase/storage";
 
 const MemoPDF = React.memo(PDF);
 const FrontEndResult = () => {
@@ -121,6 +122,13 @@ const FrontEndResult = () => {
         navigate("/viewPdf/")
     };
 
+    const ref = useRef(null);
+
+    function handleRef() {
+        console.log(ref);
+        console.log("input", ref.current);
+
+    };
     //useMemoで計算結果をメモ化する:
     //useMemoを使うことで、依存関係が変わらない限り、同じ計算を何度も実行することを防ぎ、再レンダリングの負荷を軽減できます。
     const pdfComponent = useMemo(() => {
@@ -191,7 +199,6 @@ const FrontEndResult = () => {
         // console.log('BLOG', instance.blob)
 
 
-
         const graph = () => {
             navigate("/graph/")
         }
@@ -200,6 +207,8 @@ const FrontEndResult = () => {
     return (
 
         <>
+            <Input type="text" ref={ref}></Input>
+            <Button onClick={handleRef}>useRef</Button>
             {front_language1.map((item) => {
                 <li>{item}</li>;
             })}
