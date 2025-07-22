@@ -21,11 +21,29 @@ import SideMenu_temp from "./SideMenu_temp";
 import { TodoTitle } from "./TodoTitle";
 import { AddIcon } from "@chakra-ui/icons";
 import SideMenu_top from "./SideMenu_top";
+import Firebase_testCase_level1 from "./Firebase_testCase_level1";
+import Firebase_testCase_level2 from "./Firebase_testCase_level2";
+import Firebase_testCase_level3 from "./Firebase_testCase_level3";
+import { DocumentData } from "firebase/firestore";
 const RateReview: FC = () => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
     };
+
+         const [parentState, setParentState] = useState<DocumentData>([]);
+        const handleValueChange1 = (newValue: any) => {
+            set_level_1_Form(newValue);
+        };
+    
+        const handleValueChange2 = (newValue: any) => {
+            set_level_2_Form(newValue);
+        };
+    
+        const handleValueChange3 = (newValue: any) => {
+            set_level_3_Form(newValue);
+        };
+    
     const [level_1, set_level_1_Form] = useState<any>([]);
     const [level_2, set_level_2_Form] = useState<any>([]);
     const [level_3, set_level_3_Form] = useState<any>([]);
@@ -108,93 +126,22 @@ const RateReview: FC = () => {
                                 <Tab>Leve2</Tab>
                                 <Tab>Level3</Tab>
                             </TabList>
-                            <TabPanels>
-                                <TabPanel>
+                           <TabPanels>
 
-                                    <CheckboxGroup >
-                                        <Checkbox value="1" onChange={check_level_1}>RateReview</Checkbox>
-                                        <br />
-                                        <Checkbox value="4" onChange={check_level_1}>PRateReview</Checkbox>
-                                        <br />
-                                        <Checkbox value="5" onChange={check_level_1}>jQueryを扱える</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                <TabPanel>
+                                    <Firebase_testCase_level1 handleValueChange1={handleValueChange1} />
                                 </TabPanel>
 
 
                                 <TabPanel>
-
-                                    <CheckboxGroup >
-                                        <Checkbox value="2" onChange={check_level_2}>単体テストやデバッグに関して、考え方や手法を理解して活用できる。</Checkbox>
-                                        <br />
-                                        <Checkbox value="3" onChange={check_level_2}>Jestの基本</Checkbox>
-                                        <br />
-                                        <Checkbox value="4" onChange={check_level_2}>RateReview</Checkbox>
-                                        <br />
-                                        <Checkbox value="4" onChange={check_level_2}>コンポーネントのテストができる</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                    <Firebase_testCase_level2 handleValueChange2={handleValueChange2} />
                                 </TabPanel>
+
+
                                 <TabPanel>
-
-                                    <CheckboxGroup >
-                                        <Checkbox value="1" onChange={check_level_3}>単体テスト</Checkbox>
-                                        <br />
-                                        <Checkbox value="2" onChange={check_level_3}>RateReview</Checkbox>
-                                        <br />
-                                        <Checkbox value="3" onChange={check_level_3}>RateReview</Checkbox>
-                                        <br />
-                                        <Checkbox value="4" onChange={check_level_3}>E2Eテスト</Checkbox>
-                                        <br />
-                                        <Checkbox value="10" onChange={check_level_3}>テストの策定やスケジューリングが出来る</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                    <Firebase_testCase_level3 handleValueChange3={handleValueChange3} />
                                 </TabPanel>
+
                             </TabPanels>
                         </Tabs>
                     </Flex>
