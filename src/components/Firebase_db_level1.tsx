@@ -22,7 +22,7 @@ const Firebase_db_level1 = (props: any) => {
     }
     const check_level_1 = (event: any) => {
 
-        console.log('event.target.valueの中身は',event.target.value)
+        // console.log('event.target.valueの中身は',event.target.value)
         //下記値は、インデックス番号
         if (level_1.includes(event.target.value)) {
             set_level_1_Form(level_1.filter((checkedValue: any) => checkedValue !== event.target.value));
