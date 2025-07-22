@@ -69,7 +69,7 @@ const Firebase_state_level2 = (props: any) => {
     useEffect(() => {
 
 
-        const usersCollectionRef1 = doc(db, 'front_state', 'level_1');
+        const usersCollectionRef1 = doc(db, 'front_state', 'level_2');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
