@@ -20,11 +20,29 @@ import SideMenu_temp from "./SideMenu_temp";
 import { TodoTitle } from "./TodoTitle";
 import { AddIcon } from "@chakra-ui/icons";
 import SideMenu_top from "./SideMenu_top";
+import Firebase_state_level1 from "./Firebase_state_level1";
+import Firebase_state_level2 from "./Firebase_state_level2";
+import Firebase_state_level3 from "./Firebase_state_level3";
+import { DocumentData } from "firebase/firestore";
 const State: FC = () => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
     };
+    
+    const [parentState, setParentState] = useState<DocumentData>([]);
+    const handleValueChange1 = (newValue: any) => {
+        set_level_1_Form(newValue);
+    };
+
+    const handleValueChange2 = (newValue: any) => {
+        set_level_2_Form(newValue);
+    };
+
+    const handleValueChange3 = (newValue: any) => {
+        set_level_3_Form(newValue);
+    };
+
     const [level_1, set_level_1_Form] = useState<any>([]);
     const [level_2, set_level_2_Form] = useState<any>([]);
     const [level_3, set_level_3_Form] = useState<any>([]);
@@ -108,91 +126,21 @@ const State: FC = () => {
                                 <Tab>Level3</Tab>
                             </TabList>
                             <TabPanels>
-                                <TabPanel>
 
-                                    <CheckboxGroup >
-                                        <Checkbox value="1" onChange={check_level_1}>(lan)HTMLタグ、属性を理解している</Checkbox>
-                                        <br />
-                                        <Checkbox value="2" onChange={check_level_1}>lan</Checkbox>
-                                        <br />
-                                        <Checkbox value="3" onChange={check_level_1}>lan</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                <TabPanel>
+                                    <Firebase_state_level1 handleValueChange1={handleValueChange1} />
                                 </TabPanel>
 
 
                                 <TabPanel>
-
-                                    <CheckboxGroup >
-                                        <Checkbox value="16" onChange={check_level_2}>ReduxやMaterial-UI</Checkbox>
-                                        <br />
-                                        <Checkbox value="17" onChange={check_level_2}>コンポーネント指向の設計</Checkbox>
-                                        <br />
-                                        <Checkbox value="18" onChange={check_level_2}>バックエンドのコード</Checkbox>
-                                        <br />
-                                        <Checkbox value="19" onChange={check_level_2}>フロントエンドの開発スキル</Checkbox>
-                                        <br />
-                                        <Checkbox value="20" onChange={check_level_2}>基本的なReactの概念を理解している</Checkbox>
-                                        <br />
-                                        <Checkbox value="21" onChange={check_level_2}>lan</Checkbox>
-                                        <br />
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                    <Firebase_state_level2 handleValueChange2={handleValueChange2} />
                                 </TabPanel>
+
+
                                 <TabPanel>
-
-                                    <CheckboxGroup >
-                                        <Checkbox value="1" onChange={check_level_3}>Java(A)</Checkbox>
-                                        <br />
-                                        <Checkbox value="2" onChange={check_level_3}>Java</Checkbox>
-                                    </CheckboxGroup>
-                                    <Button
-                                        onClick={next}
-                                        colorScheme="pink"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">判定
-                                    </Button>
-                                    <Button
-                                        onClick={goBack}
-                                        colorScheme="blue"
-                                        variant="outline"
-                                        size="sm"
-                                        leftIcon={<AddIcon />}
-                                        mt="8">戻る
-                                    </Button>
+                                    <Firebase_state_level3 handleValueChange3={handleValueChange3} />
                                 </TabPanel>
+
                             </TabPanels>
                         </Tabs>
                     </Flex>
