@@ -245,13 +245,8 @@ const FrontEndResult = () => {
                             </Flex>
                         ))}
                         <br />
-                        <Text >test<b>[{level3_Array.length}]</b>ソースコード検証用</Text>
-                        {front_language1.map((content: any, index: any) => (
-                            <Flex direction="column">
-                                {content}
-                            </Flex>
-                        ))}
-                        <br />
+                     
+                      
                         <br />
 
                         <Flex>
