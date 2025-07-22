@@ -255,8 +255,6 @@ const FrontEndResult = () => {
                         <br />
 
                         <Flex>
-                            <Button colorScheme="yellow" size="sm" variant="outline" leftIcon={<AddIcon />} onClick={() => viewPdf('dummy')}>PDF表示</Button>
-
                             <Button colorScheme="blue" size="sm" variant="outline" leftIcon={<AddIcon />}>
                                 <Link href={url_j} download="test.pdf">PDFダウンロード</Link>
                             </Button>

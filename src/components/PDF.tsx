@@ -164,10 +164,10 @@ const PDF: FC = () => {
         // increment(documentSnapshot.get('content'))
         setLanguage1(documentSnapshot.get('content'))
         // front_language1 = documentSnapshot.get('content');
-        console.log('shouldScrollToTop(Inner)', front_language1);
+        // console.log('shouldScrollToTop(Inner)', front_language1);
       }
     });
-    console.log('shouldScrollToTop<Outer>', front_language1);
+    // console.log('shouldScrollToTop<Outer>', front_language1);
   }, []);
 
   return (
