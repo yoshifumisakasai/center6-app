@@ -50,7 +50,7 @@ const App: FC = () => {
                                     <Route path={`/kanri_skill_Check/`} element={<Kanri_Skill_Check />} />
                                     <Route path={`/kanri_frontEnd/`} element={<Kanri_FrontEnd />} />
                                     <Route path="/kanri_dashboard/" element={<Kanri_Dashboard />} />
-                                    <Route path="/state/" element={<Kanri_State />} />
+                                    <Route path="/kanri_state/" element={<Kanri_State />} />
                                     <Route path="/dashboard/" element={<Dashboard />} />
                                     <Route path="/state/" element={<State />} />
                                     <Route path="/framework/" element={<Framework />} />
