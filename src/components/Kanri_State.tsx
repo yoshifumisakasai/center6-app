@@ -79,7 +79,7 @@ const Kanri_State: FC = () => {
 
                     <Flex direction="column">
                         <TodoTitle
-                            title="Language"
+                            title="ステート管理"
                             as="h1"
                             fontSize={{ base: "xl", md: "xl" }}
                             mt="1"
