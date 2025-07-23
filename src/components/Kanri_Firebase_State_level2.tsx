@@ -37,7 +37,7 @@ function Kanri_Firebase_State_level2() {
     const handleSubmit = async (event: any) => {
         setInput1(event.target.value)
         event.preventDefault();
-        const userDocumentRef1 = doc(db, 'front_language', 'level_1');
+        const userDocumentRef1 = doc(db, 'front_state', 'level_1');
         if (input1 === "") {
         } else {
             await updateDoc(userDocumentRef1,
@@ -46,7 +46,7 @@ function Kanri_Firebase_State_level2() {
 
         //Firebase追加後、再レンダリング実行
         //useState(setLanguage1)の値変更
-        const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+        const usersCollectionRef1 = doc(db, 'front_state', 'level_1');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
@@ -69,7 +69,7 @@ function Kanri_Firebase_State_level2() {
     //削除実装
     const deleteUser = async (name: any) => {
         console.log('NAME', name)
-        const userDocumentRef1 = doc(db, 'front_language', 'level_1');
+        const userDocumentRef1 = doc(db, 'front_state', 'level_1');
 
         //ループ処理
         for (let i = 0; i < level_1.length; i++) {
@@ -80,7 +80,7 @@ function Kanri_Firebase_State_level2() {
 
         //Firebase削除後、再レンダリング実行
         //useState(setLanguage1)の値変更
-        const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+        const usersCollectionRef1 = doc(db, 'front_state', 'level_1');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
@@ -103,7 +103,7 @@ function Kanri_Firebase_State_level2() {
     //削除＆追加
     const changeUser = async (name: any) => {
         console.log('NAME', name)
-        const userDocumentRef1 = doc(db, 'front_language', 'level_1');
+        const userDocumentRef1 = doc(db, 'front_state', 'level_1');
 
         //ループ処理
         for (let i = 0; i < level_1.length; i++) {
@@ -116,7 +116,7 @@ function Kanri_Firebase_State_level2() {
         console.log('選んだ選択肢は', selectedOption);
         console.log('変更する項目名は', level_1);
 
-        const ref = doc(db, 'front_language', selectedOption);
+        const ref = doc(db, 'front_state', selectedOption);
         if (level_1 === "") {
         } else {
             for (let i = 0; i < level_1.length; i++) {
@@ -127,7 +127,7 @@ function Kanri_Firebase_State_level2() {
 
         //Firebase変更（削除→追加）後、再レンダリング実行
         //useState(setLanguage1)の値変更
-        const usersCollectionRef1 = doc(db, 'front_language', 'level_1');
+        const usersCollectionRef1 = doc(db, 'front_state', 'level_1');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());

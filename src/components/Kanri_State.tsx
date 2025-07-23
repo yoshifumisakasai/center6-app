@@ -29,6 +29,9 @@ import Kanri_SideMenu_temp from "./Kanri_SideMenu_temp";
 import Kanri_Firebase_db_level1 from "./Kanri_Firebase_db_level1";
 import Kanri_Firebase_db_level3 from "./Kanri_Firebase_db_level3";
 import Kanri_Firebase_db_level2 from "./Kanri_Firebase_db_level2";
+import Kanri_Firebase_State_level1 from "./Kanri_Firebase_State_level1";
+import Kanri_Firebase_State_level2 from "./Kanri_Firebase_State_level2";
+import Kanri_Firebase_State_level3 from "./Kanri_Firebase_State_level3";
 const Kanri_State: FC = () => {
     let navigate = useNavigate();
     let goBack = () => {
@@ -90,17 +93,17 @@ const Kanri_State: FC = () => {
                             <TabPanels>
 
                                 <TabPanel>
-                                    <Kanri_Firebase_db_level1 />
+                                    <Kanri_Firebase_State_level1 />
                                 </TabPanel>
 
 
                                 <TabPanel>
-                                    <Kanri_Firebase_db_level2 />
+                                    <Kanri_Firebase_State_level2 />
                                 </TabPanel>
 
 
                                 <TabPanel>
-                                    <Kanri_Firebase_db_level3 />
+                                    <Kanri_Firebase_State_level3 />
                                 </TabPanel>
 
                             </TabPanels>
