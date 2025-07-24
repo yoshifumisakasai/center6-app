@@ -59,7 +59,7 @@ const App: FC = () => {
                                     <Route path="/kanri_framework/" element={<Kanri_Framework />} />
                                     <Route path="/kanri_hook/" element={<Kanri_Hook />} />
                                     <Route path="/kanri_css_library/" element={<Kanri_CSS_library />} />
-                                    <Route path="/kanri_test_case/" element={<Kanri_test_Case />} />
+                                    <Route path="/kanri_ratereview/" element={<Kanri_test_Case />} />
 
                                     <Route path="/dashboard/" element={<Dashboard />} />
                                     <Route path="/state/" element={<State />} />
