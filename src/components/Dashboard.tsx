@@ -79,6 +79,11 @@ const Dashboard: FC =  (props: any) => {
                         />
                         <Tabs>
                             <TabList mb='1em'>
+                                <Tab>言語</Tab>
+                                <Tab>フレームワーク</Tab>
+                                <Tab>状態管理</Tab>
+                            </TabList>
+                            <TabList mb='1em'>
                                 <Tab>Level1</Tab>
                                 <Tab>Leve2</Tab>
                                 <Tab>Level3</Tab>
