@@ -37,7 +37,7 @@ function Kanri_Firebase_testCase_level2() {
     const handleSubmit = async (event: any) => {
         setInput1(event.target.value)
         event.preventDefault();
-        const userDocumentRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const userDocumentRef1 = doc(db, 'kanri_testCase', 'level_2');
         if (input1 === "") {
         } else {
             await updateDoc(userDocumentRef1,
@@ -46,7 +46,7 @@ function Kanri_Firebase_testCase_level2() {
 
         //Firebase追加後、再レンダリング実行
         //useState(setLanguage1)の値変更
-        const usersCollectionRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const usersCollectionRef1 = doc(db, 'kanri_testCase', 'level_2');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
@@ -69,7 +69,7 @@ function Kanri_Firebase_testCase_level2() {
     //削除実装
     const deleteUser = async (name: any) => {
         console.log('NAME', name)
-        const userDocumentRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const userDocumentRef1 = doc(db, 'kanri_testCase', 'level_2');
 
         //ループ処理
         for (let i = 0; i < level_1.length; i++) {
@@ -80,7 +80,7 @@ function Kanri_Firebase_testCase_level2() {
 
         //Firebase削除後、再レンダリング実行
         //useState(setLanguage1)の値変更
-        const usersCollectionRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const usersCollectionRef1 = doc(db, 'kanri_testCase', 'level_2');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
@@ -103,7 +103,7 @@ function Kanri_Firebase_testCase_level2() {
     //削除＆追加
     const changeUser = async (name: any) => {
         console.log('NAME', name)
-        const userDocumentRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const userDocumentRef1 = doc(db, 'kanri_testCase', 'level_2');
 
         //ループ処理
         for (let i = 0; i < level_1.length; i++) {
@@ -127,7 +127,7 @@ function Kanri_Firebase_testCase_level2() {
 
         //Firebase変更（削除→追加）後、再レンダリング実行
         //useState(setLanguage1)の値変更
-        const usersCollectionRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const usersCollectionRef1 = doc(db, 'kanri_testCase', 'level_2');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
@@ -182,7 +182,7 @@ function Kanri_Firebase_testCase_level2() {
     useEffect(() => {
 
 
-        const usersCollectionRef1 = doc(db, 'kanri_test_case', 'level_2');
+        const usersCollectionRef1 = doc(db, 'kanri_testCase', 'level_2');
         getDoc(usersCollectionRef1).then((documentSnapshot) => {
             if (documentSnapshot.exists()) {
                 // setLanguage2(documentSnapshot.data());
