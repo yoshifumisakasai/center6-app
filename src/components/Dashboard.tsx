@@ -25,7 +25,7 @@ import Firebase_db_level2 from "./Firebase_db_level2";
 import Firebase_db_level3 from "./Firebase_db_level3";
 import Firebase_db_level1 from "./Firebase_db_level1";
 import { DocumentData } from "firebase/firestore";
-const Dashboard: FC =  (props: any) => {
+const Dashboard: FC = (props: any) => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
@@ -82,6 +82,9 @@ const Dashboard: FC =  (props: any) => {
                                 <Tab>言語</Tab>
                                 <Tab>フレームワーク</Tab>
                                 <Tab>状態管理</Tab>
+                                <Tab>CSSライブラリ</Tab>
+                                <Tab>フック</Tab>
+                                <Tab>テスト管理</Tab>
                             </TabList>
                             <TabList mb='1em'>
                                 <Tab>Level1</Tab>
