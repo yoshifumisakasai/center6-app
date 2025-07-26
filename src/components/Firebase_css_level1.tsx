@@ -33,6 +33,7 @@ const Firebase_css_level1 = (props: any) => {
         }
         // チェックされていたらエラーメッセージが表示されない
 
+        //親コンポーネントへデータ渡し
         props.handleValueChange1(css_level_1);
         // console.log('Checked個数', level_1);
     };

@@ -31,10 +31,12 @@ import Hook from "./Hook";
 import RateReview from "./RateReview";
 const Dashboard: FC = (props: any) => {
 
+    // 子コンポーネントから受け取った値を格納するstate
     const [css_level_1, set_css_level_1_Form] = useState<any>([]);
     const [css_level_2, set_css_level_2_Form] = useState<any>([]);
     const [css_level_3, set_css_level_3_Form] = useState<any>([]);
 
+    // 子コンポーネントから受け取った値を親コンポーネントのstateに格納
     const insert_Inventory_css_level1 = (css: any) => {
         set_css_level_1_Form(css);
     };
@@ -107,7 +109,11 @@ const Dashboard: FC = (props: any) => {
                             <TabPanels>
 
                                 <TabPanel>
-                                    <Lan insert_Inventory_css_level1={insert_Inventory_css_level1}/>
+                                    <Lan 
+                                    insert_Inventory_css_level1={insert_Inventory_css_level1} 
+                                    insert_Inventory_css_level2={insert_Inventory_css_level2}
+                                    insert_Inventory_css_level3={insert_Inventory_css_level3}
+                                    />
                                 </TabPanel>
 
                                 <TabPanel>
