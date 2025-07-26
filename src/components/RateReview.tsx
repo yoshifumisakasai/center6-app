@@ -110,12 +110,10 @@ const RateReview: FC = () => {
             <ChakraProvider theme={theme}>
 
                 <Flex w="100vw" h="100wh" >
-                    <SideMenu_top />
-                    <SideMenu_temp />
 
                     <Flex direction="column">
                         <TodoTitle
-                            title="Test Case"
+                            title="テスト管理"
                             as="h1"
                             fontSize={{ base: "xl", md: "xl" }}
                             mt="1"

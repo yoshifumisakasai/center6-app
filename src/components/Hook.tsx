@@ -23,7 +23,7 @@ import Firebase_hook_level1 from "./Firebase_hook_level1";
 import Firebase_hook_level2 from "./Firebase_hook_level2";
 import Firebase_hook_level3 from "./Firebase_hook_level3";
 import { DocumentData } from "firebase/firestore";
-const Charts: FC = () => {
+const Hook: FC = () => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
@@ -108,12 +108,10 @@ const Charts: FC = () => {
             <ChakraProvider theme={theme}>
 
                 <Flex w="100vw" h="100wh" >
-                    <SideMenu_top />
-                    <SideMenu_temp />
 
                     <Flex direction="column">
                         <TodoTitle
-                            title="Hooks"
+                            title="useフック"
                             as="h1"
                             fontSize={{ base: "xl", md: "xl" }}
                             mt="1"
@@ -149,4 +147,4 @@ const Charts: FC = () => {
     );
 };
 
-export default Charts;
+export default Hook;

@@ -26,6 +26,9 @@ import Firebase_db_level1 from "./Firebase_db_level1";
 import { DocumentData } from "firebase/firestore";
 import Lan from "./Lan";
 import State from "./State";
+import CSS_library from "./CSS_library";
+import Hook from "./Hook";
+import RateReview from "./RateReview";
 const Dashboard: FC = (props: any) => {
     let navigate = useNavigate();
     let goBack = () => {
@@ -95,6 +98,18 @@ const Dashboard: FC = (props: any) => {
 
                                 <TabPanel>
                                     <State />
+                                </TabPanel>
+
+                                <TabPanel>
+                                    <CSS_library />
+                                </TabPanel>
+
+                                <TabPanel>
+                                    <Hook />
+                                </TabPanel>
+
+                                <TabPanel>
+                                    <RateReview />
                                 </TabPanel>
 
                             </TabPanels>

@@ -108,12 +108,10 @@ const CSS_library: FC = () => {
             <ChakraProvider theme={theme}>
 
                 <Flex w="100vw" h="100wh" >
-                    <SideMenu_top />
-                    <SideMenu_temp />
 
                     <Flex direction="column">
                         <TodoTitle
-                            title="CSS Library"
+                            title="CSS ライブラリ機能"
                             as="h1"
                             fontSize={{ base: "xl", md: "xl" }}
                             mt="1"
