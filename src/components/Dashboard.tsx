@@ -25,6 +25,7 @@ import Firebase_db_level3 from "./Firebase_db_level3";
 import Firebase_db_level1 from "./Firebase_db_level1";
 import { DocumentData } from "firebase/firestore";
 import Lan from "./Lan";
+import State from "./State";
 const Dashboard: FC = (props: any) => {
     let navigate = useNavigate();
     let goBack = () => {
@@ -70,7 +71,7 @@ const Dashboard: FC = (props: any) => {
                     <SideMenu_top />
 
                     <Flex direction="column">
-                       
+
                         <Tabs>
                             <TabList mb='1em'>
                                 <Tab>言語</Tab>
@@ -90,6 +91,10 @@ const Dashboard: FC = (props: any) => {
 
                                 <TabPanel>
                                     <Framework />
+                                </TabPanel>
+
+                                <TabPanel>
+                                    <State />
                                 </TabPanel>
 
                             </TabPanels>

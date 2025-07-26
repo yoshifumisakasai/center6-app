@@ -110,11 +110,10 @@ const State: FC = () => {
 
                 <Flex w="100vw" h="100wh" >
                     <SideMenu_top />
-                    <SideMenu_temp />
 
                     <Flex direction="column">
                         <TodoTitle
-                            title="State Library"
+                            title="状態管理"
                             as="h1"
                             fontSize={{ base: "xl", md: "xl" }}
                             mt="1"
