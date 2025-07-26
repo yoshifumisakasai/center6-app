@@ -7,7 +7,6 @@ import Mypage from "./Mypage";
 import Skill_Check from "./Skill_Check";
 import Dashboard from "./Dashboard";
 import Framework from "./Framework";
-import Language from "./Language";
 import FrontEndResult from "./FrontEndResult";
 import Graph from "./Graph"
 import Account from "./State";
