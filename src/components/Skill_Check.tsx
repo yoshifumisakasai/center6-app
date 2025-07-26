@@ -37,7 +37,6 @@ const Skill_Check: React.FC = () => {
                 <Flex w="100vw" h="100wh" >
                     <SideMenu_top />
                     <Flex direction="column">
-                        <div className="select-container">
                             <select value={selectedOption} onChange={handleChange}>
                                 {options.map((option) => (
                                     <option key={option.value} value={option.value}>
@@ -45,8 +44,7 @@ const Skill_Check: React.FC = () => {
                                     </option>
                                 ))}
                             </select>
-                        </div>
-                        <br />
+                        
                         <p>選択された技術領域: {selectedOption}</p>
                         <Button
                             onClick={frontEnd}
