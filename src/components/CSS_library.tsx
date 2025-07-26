@@ -23,25 +23,30 @@ import Firebase_css_level3 from "./Firebase_css_level3";
 import Firebase_css_level1 from "./Firebase_css_level1";
 import Firebase_css_level2 from "./Firebase_css_level2";
 import { DocumentData } from "firebase/firestore";
-const CSS_library: FC = (props:any) => {
+const CSS_library: FC = (props: any) => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
     };
 
     const [parentState, setParentState] = useState<DocumentData>([]);
+
+    //子コンポーネントから受け取った値で親コンポーネントの値を更新する関数
     const handleValueChange1 = (newValue: any) => {
         set_level_1_Form(newValue);
+        props.insert_Inventory_css_level1(level_1)
     };
 
     const handleValueChange2 = (newValue: any) => {
         set_level_2_Form(newValue);
+        props.insert_Inventory_css_level2(level_2)
     };
 
     const handleValueChange3 = (newValue: any) => {
         set_level_3_Form(newValue);
+        props.insert_Inventory_css_level3(level_3)
     };
-    
+
     const [level_1, set_level_1_Form] = useState<any>([]);
     const [level_2, set_level_2_Form] = useState<any>([]);
     const [level_3, set_level_3_Form] = useState<any>([]);
@@ -122,8 +127,8 @@ const CSS_library: FC = (props:any) => {
                                 <Tab>Leve2</Tab>
                                 <Tab>Level3</Tab>
                             </TabList>
-                           <TabPanels>
-
+                            <TabPanels>
+                                {/* 子コンポーネント側の値で更新するためにpropsで渡す */}
                                 <TabPanel>
                                     <Firebase_css_level1 handleValueChange1={handleValueChange1} />
                                 </TabPanel>

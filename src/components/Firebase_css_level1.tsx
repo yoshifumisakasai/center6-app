@@ -1,12 +1,14 @@
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect, FC, createContext } from 'react';
 import { db } from './FirebaseConfig';
 import { collection, doc, DocumentData, getDoc, getDocs, getDocsFromServer } from 'firebase/firestore';
 import { useTransform } from 'framer-motion';
 import { Button, Checkbox, CheckboxGroup, Flex } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { AddIcon } from '@chakra-ui/icons';
+import React, { useContext } from 'react';
 
 const Firebase_css_level1 = (props: any) => {
+
 
     let navigate = useNavigate();
     let goBack = () => {
@@ -17,6 +19,9 @@ const Firebase_css_level1 = (props: any) => {
     const next = () => {
         navigate("/frontEndResult/", { state: entity })
     }
+
+
+    // 親コンポーネントから受け取った関数を使って、値を渡す
     const check_level_1 = (event: any) => {
 
         // console.log('event.target.valueの中身は',event.target.value)
