@@ -66,7 +66,15 @@ const Lan: FC = (props: any) => {
         <>
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh" >
+
+
                     <Flex direction="column">
+                        <TodoTitle
+                            title="フロントエンド言語"
+                            as="h1"
+                            fontSize={{ base: "xl", md: "xl" }}
+                            mt="1"
+                        />
                         <Tabs>
                             <TabList mb='1em'>
                                 <Tab>Level1</Tab>

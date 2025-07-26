@@ -112,7 +112,7 @@ const Framework: FC = () => {
 
                     <Flex direction="column">
                         <TodoTitle
-                            title="framework"
+                            title="フレームワーク"
                             as="h1"
                             fontSize={{ base: "xl", md: "xl" }}
                             mt="1"

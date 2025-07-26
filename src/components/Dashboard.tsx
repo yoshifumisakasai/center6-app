@@ -68,7 +68,6 @@ const Dashboard: FC = (props: any) => {
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh" >
                     <SideMenu_top />
-                    <SideMenu_temp />
 
                     <Flex direction="column">
                        
