@@ -11,9 +11,7 @@ const Firebase_db_level3 = (props: any) => {
     let goBack = () => {
         navigate(-1);
     };
-    const [level_1, set_level_1_Form] = useState<any>([]);
-    const [level_2, set_level_2_Form] = useState<any>([]);
-    const [level_3, set_level_3_Form] = useState<any>([]);
+    const [DB_level_3, set_DB_level_3Form] = useState<any>([]);
 
     const next = () => {
         navigate("/frontEndResult/", { state: entity })
@@ -23,24 +21,22 @@ const Firebase_db_level3 = (props: any) => {
 
     const check_level_3 = (event: any) => {
         console.log('内容', event.target.value)
-        if (level_3.includes(event.target.value)) {
-            set_level_3_Form(level_3.filter((checkedValue: any) => checkedValue !== event.target.value))
-            console.log(level_3);
+        if (DB_level_3.includes(event.target.value)) {
+            set_DB_level_3Form(DB_level_3.filter((checkedValue: any) => checkedValue !== event.target.value))
+            console.log(DB_level_3);
 
         } else {
-            level_3.push(event.target.value);
-            set_level_3_Form(level_3)
-            console.log(level_3);
+            DB_level_3.push(event.target.value);
+            set_DB_level_3Form(DB_level_3)
+            console.log(DB_level_3);
 
         }
         // チェックされていたらエラーメッセージが表示されない
-        props.handleValueChange3(level_3);
+        props.handleValueChange3(DB_level_3);
 
     };
     interface HomeEntity {
-        level1: {},
-        level2: {},
-        level3: {}
+        DB_level_3: {}
     }
 
     // const entity: HomeEntity = {
@@ -49,9 +45,7 @@ const Firebase_db_level3 = (props: any) => {
     //     level3: level_3.join(', ')
     // };
     const entity: HomeEntity = {
-        level1: level_1,
-        level2: level_2,
-        level3: level_3
+        DB_level_3: DB_level_3
     };
 
     const [front_language3, setLanguage3] = useState<DocumentData>([]);

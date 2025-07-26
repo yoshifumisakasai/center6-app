@@ -33,6 +33,7 @@ import Kanri_Framework from "./Kanri_Framework";
 import Kanri_Hook from "./Kanri_Hook";
 import Kanri_test_Case from "./Kanri_test_Case";
 import Kanri_CSS_library from "./Kanri_CSS_library";
+import List_inventory from "./List_inventory";
 const App: FC = () => {
     // const MemoPDFViewer = React.memo(MemoizedPDFViewer);
 
@@ -66,6 +67,7 @@ const App: FC = () => {
                                     <Route path="/hook/" element={<Hook />} />
                                     <Route path="/css_library/" element={<CSS_library />} />
                                     <Route path="/management/" element={<Management />} />
+                                    <Route path="/list_inventory/" element={<List_inventory />} />
                                     <Route path={`/frontEndResult/`} element={<FrontEndResult />} />
                                     <Route path={`/viewPdf/`} element={<MemoizedPDFViewer />} />
 

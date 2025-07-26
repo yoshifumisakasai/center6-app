@@ -20,8 +20,8 @@ export const SideMenu_top = () => {
             icon: MdDashboard
         },
         {
-            name: "判定履歴",
-            path: "/management/",
+            name: "履歴一覧",
+            path: "/list_inventory/",
             icon: MdAccountBox
 
         },

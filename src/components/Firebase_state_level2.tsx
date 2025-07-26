@@ -12,9 +12,7 @@ const Firebase_state_level2 = (props: any) => {
     let goBack = () => {
         navigate(-1);
     };
-    const [level_1, set_level_1_Form] = useState<any>([]);
-    const [level_2, set_level_2_Form] = useState<any>([]);
-    const [level_3, set_level_3_Form] = useState<any>([]);
+    const [state_level_2, set_State_level_2_Form] = useState<any>([]);
 
 
     const next = () => {
@@ -24,27 +22,25 @@ const Firebase_state_level2 = (props: any) => {
 
         // console.log('event.target.valueの中身は',event.target.value)
         //下記値は、インデックス番号
-        if (level_1.includes(event.target.value)) {
-            set_level_1_Form(level_1.filter((checkedValue: any) => checkedValue !== event.target.value));
+        if (state_level_2.includes(event.target.value)) {
+            set_State_level_2_Form(state_level_2.filter((checkedValue: any) => checkedValue !== event.target.value));
             // console.log('[Include]チェックボックスChecked個数', level_1);
         } else {
-            level_1.push(event.target.value);
-            set_level_1_Form(level_1);
+            state_level_2.push(event.target.value);
+            set_State_level_2_Form(state_level_2);
             // console.log('NO_INCLUDE',event.target.value);
             // console.log('[No_Include]チェックボックスChecked個数', level_1);
 
         }
         // チェックされていたらエラーメッセージが表示されない
 
-        props.handleValueChange1(level_1);
+        props.handleValueChange1(state_level_2);
         // console.log('Checked個数', level_1);
     };
 
 
     interface HomeEntity {
-        level1: {},
-        level2: {},
-        level3: {}
+        state_level_2: {}
     }
 
     // const entity: HomeEntity = {
@@ -53,9 +49,7 @@ const Firebase_state_level2 = (props: any) => {
     //     level3: level_3.join(', ')
     // };
     const entity: HomeEntity = {
-        level1: level_1,
-        level2: level_2,
-        level3: level_3
+        state_level_2: state_level_2
     };
 
 
