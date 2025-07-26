@@ -24,8 +24,7 @@ import Firebase_db_level2 from "./Firebase_db_level2";
 import Firebase_db_level3 from "./Firebase_db_level3";
 import Firebase_db_level1 from "./Firebase_db_level1";
 import { DocumentData } from "firebase/firestore";
-import Lan from "./Lan";
-const Dashboard: FC = (props: any) => {
+const Lan: FC = (props: any) => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
@@ -67,50 +66,30 @@ const Dashboard: FC = (props: any) => {
         <>
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh" >
-                    <SideMenu_top />
-                    <SideMenu_temp />
-
                     <Flex direction="column">
-                        <TodoTitle
-                            title="Language"
-                            as="h1"
-                            fontSize={{ base: "xl", md: "xl" }}
-                            mt="1"
-                        />
                         <Tabs>
                             <TabList mb='1em'>
-                                <Tab>言語</Tab>
-
-
-                                <Tab>フレームワーク</Tab>
-                                <Tab>状態管理</Tab>
-                                <Tab>CSSライブラリ</Tab>
-                                <Tab>フック</Tab>
-                                <Tab>テスト管理</Tab>
+                                <Tab>Level1</Tab>
+                                <Tab>Leve2</Tab>
+                                <Tab>Level3</Tab>
                             </TabList>
                             <TabPanels>
 
                                 <TabPanel>
-                                    <Lan />
+                                    <Firebase_db_level1 handleValueChange1={handleValueChange1} />
+                                </TabPanel>
+
+
+                                <TabPanel>
+                                    <Firebase_db_level2 handleValueChange2={handleValueChange2} />
+                                </TabPanel>
+
+
+                                <TabPanel>
+                                    <Firebase_db_level3 handleValueChange3={handleValueChange3} />
                                 </TabPanel>
 
                             </TabPanels>
-                            <Button
-                                onClick={next}
-                                colorScheme="pink"
-                                variant="outline"
-                                size="sm"
-                                leftIcon={<AddIcon />}
-                                mt="8">判定
-                            </Button>
-                            <Button
-                                onClick={goBack}
-                                colorScheme="blue"
-                                variant="outline"
-                                size="sm"
-                                leftIcon={<AddIcon />}
-                                mt="8">戻る
-                            </Button>
                         </Tabs>
                     </Flex>
                 </Flex>
@@ -120,4 +99,4 @@ const Dashboard: FC = (props: any) => {
     );
 };
 
-export default Dashboard;
+export default Lan;
