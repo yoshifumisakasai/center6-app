@@ -23,7 +23,7 @@ import Firebase_css_level3 from "./Firebase_css_level3";
 import Firebase_css_level1 from "./Firebase_css_level1";
 import Firebase_css_level2 from "./Firebase_css_level2";
 import { DocumentData } from "firebase/firestore";
-const CSS_library: FC = () => {
+const CSS_library: FC = (props:any) => {
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
