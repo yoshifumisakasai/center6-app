@@ -109,7 +109,6 @@ const State: FC = () => {
             <ChakraProvider theme={theme}>
 
                 <Flex w="100vw" h="100wh" >
-                    <SideMenu_top />
 
                     <Flex direction="column">
                         <TodoTitle
