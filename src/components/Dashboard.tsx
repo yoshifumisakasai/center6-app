@@ -94,6 +94,10 @@ const Dashboard: FC = (props: any) => {
                                     <Lan />
                                 </TabPanel>
 
+                                <TabPanel>
+                                    <Framework />
+                                </TabPanel>
+
                             </TabPanels>
                             <Button
                                 onClick={next}
