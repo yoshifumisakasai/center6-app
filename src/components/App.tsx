@@ -39,7 +39,6 @@ const App: FC = () => {
     return (
         <ChakraProvider theme={theme}>
             <Flex w="100vw" h="100wh">
-                <TopHeader />
                 <Box mt="100px">
                     <Flex>
                         <BrowserRouter>
