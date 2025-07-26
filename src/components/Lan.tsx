@@ -24,7 +24,15 @@ import Firebase_db_level2 from "./Firebase_db_level2";
 import Firebase_db_level3 from "./Firebase_db_level3";
 import Firebase_db_level1 from "./Firebase_db_level1";
 import { DocumentData } from "firebase/firestore";
-const Lan: FC = (props: any) => {
+const Lan = (props: any) => {
+
+    //親コンポーネントへデータ共有
+    const insert_Inventory_css_level1 = (event: any) => {
+        const value = event.target.value;
+        props.insert_Inventory_css_level1(value);
+    };
+
+
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);

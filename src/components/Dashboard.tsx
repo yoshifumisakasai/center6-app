@@ -30,6 +30,24 @@ import CSS_library from "./CSS_library";
 import Hook from "./Hook";
 import RateReview from "./RateReview";
 const Dashboard: FC = (props: any) => {
+
+    const [css_level_1, set_css_level_1_Form] = useState<any>([]);
+    const [css_level_2, set_css_level_2_Form] = useState<any>([]);
+    const [css_level_3, set_css_level_3_Form] = useState<any>([]);
+
+    const insert_Inventory_css_level1 = (css: any) => {
+        set_css_level_1_Form(css);
+    };
+    const insert_Inventory_css_level2 = (css: any) => {
+        set_css_level_2_Form(css);
+    };
+
+    const insert_Inventory_css_level3 = (css: any) => {
+        set_css_level_3_Form(css);
+    };
+
+
+
     let navigate = useNavigate();
     let goBack = () => {
         navigate(-1);
@@ -89,7 +107,7 @@ const Dashboard: FC = (props: any) => {
                             <TabPanels>
 
                                 <TabPanel>
-                                    <Lan />
+                                    <Lan insert_Inventory_css_level1={insert_Inventory_css_level1}/>
                                 </TabPanel>
 
                                 <TabPanel>
