@@ -1,4 +1,4 @@
-import { Button, Container, Flex } from "@chakra-ui/react";
+import { Button, ChakraProvider, Container, Flex, theme } from "@chakra-ui/react";
 import { useState } from "react";
 import { TodoTitle } from "./TodoTitle";
 import './Skill_Check.css';
@@ -32,39 +32,39 @@ const Skill_Check: React.FC = () => {
     };
     return (
         <>
-            <Container centerContent p={{ base: "4", md: "6" }} maxWidth="3xl">
-        
-            <Flex>
-                <SideMenu_top />
-                <Flex direction="column">
-                    <div className="select-container">
-                        <select value={selectedOption} onChange={handleChange}>
-                            {options.map((option) => (
-                                <option key={option.value} value={option.value}>
-                                    {option.label}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <br />
-                    <p>選択された技術領域: {selectedOption}</p>
-                    <Button
-                        onClick={frontEnd}
-                        colorScheme="blue"
-                        leftIcon={<AddIcon />}
-                        mt="8">スキル入力へ
-                    </Button>
-                    <Button
-                        onClick={goBack}
-                        colorScheme="blue"
-                        variant="outline"
-                        size="sm"
-                        leftIcon={<AddIcon />}
-                        mt="8">戻る
-                    </Button>
+
+            <ChakraProvider theme={theme}>
+                <Flex w="100vw" h="100wh" >
+                    <SideMenu_top />
+                    <Flex direction="column">
+                        <div className="select-container">
+                            <select value={selectedOption} onChange={handleChange}>
+                                {options.map((option) => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <br />
+                        <p>選択された技術領域: {selectedOption}</p>
+                        <Button
+                            onClick={frontEnd}
+                            colorScheme="blue"
+                            leftIcon={<AddIcon />}
+                            mt="8">スキル入力へ
+                        </Button>
+                        <Button
+                            onClick={goBack}
+                            colorScheme="blue"
+                            variant="outline"
+                            size="sm"
+                            leftIcon={<AddIcon />}
+                            mt="8">戻る
+                        </Button>
+                    </Flex>
                 </Flex>
-            </Flex>
-            </Container>
+            </ChakraProvider>
         </>
     );
 };
