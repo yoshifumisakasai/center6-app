@@ -36,14 +36,15 @@ const Skill_Check: React.FC = () => {
             <ChakraProvider theme={theme}>
                 <Flex w="100vw" h="100wh" >
                     <SideMenu_top />
-                            <select value={selectedOption} onChange={handleChange}>
-                                {options.map((option) => (
-                                    <option key={option.value} value={option.value}>
-                                        {option.label}
-                                    </option>
-                                ))}
-                            </select>
-                        
+                    <Flex direction="column">
+                        <select value={selectedOption} onChange={handleChange}>
+                            {options.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+
                         <p>選択された技術領域: {selectedOption}</p>
                         <Button
                             onClick={frontEnd}
@@ -60,6 +61,7 @@ const Skill_Check: React.FC = () => {
                             mt="8">戻る
                         </Button>
                     </Flex>
+                </Flex>
             </ChakraProvider>
         </>
     );
