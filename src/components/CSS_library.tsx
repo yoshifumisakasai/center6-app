@@ -34,7 +34,7 @@ const CSS_library: FC = (props: any) => {
     //子コンポーネントから受け取った値で親コンポーネントの値を更新する関数
     const handleValueChange1 = (newValue: any) => {
         set_level_1_Form(newValue);
-        props.insert_Inventory_css_level1(level_1)
+        props.insert_Inventory_css_level1(newValue)
     };
 
     const handleValueChange2 = (newValue: any) => {
