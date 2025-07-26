@@ -6,7 +6,7 @@ import { FC, useState } from "react";
 import Mypage from "./Mypage";
 import Skill_Check from "./Skill_Check";
 import Dashboard from "./Dashboard";
-import Language from "./Language";
+import Language from "./Language"
 import FrontEndResult from "./FrontEndResult";
 import Graph from "./Graph"
 import Account from "./State";

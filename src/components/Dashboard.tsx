@@ -71,12 +71,7 @@ const Dashboard: FC = (props: any) => {
                     <SideMenu_temp />
 
                     <Flex direction="column">
-                        <TodoTitle
-                            title="Language"
-                            as="h1"
-                            fontSize={{ base: "xl", md: "xl" }}
-                            mt="1"
-                        />
+                       
                         <Tabs>
                             <TabList mb='1em'>
                                 <Tab>言語</Tab>
